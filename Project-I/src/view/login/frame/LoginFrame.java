@@ -29,6 +29,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Hệ thống quản lý sách thư viện");
     }
     
 
@@ -72,6 +73,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel4.setLayout(null);
 
