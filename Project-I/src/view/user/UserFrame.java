@@ -9,7 +9,7 @@ import java.awt.Frame;
 import model.user.User;
 import view.user.checkinfo.CheckInfoForm;
 import view.user.search.SearchBookForm;
-import view.clock.ClockThread;
+import view.other.ClockThread;
 
 /**
  *
@@ -342,7 +342,6 @@ public class UserFrame extends javax.swing.JFrame {
     private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
         this.dispose();
         LoginFrame lf = new  LoginFrame();
-        lf.setVisible(true);
     }//GEN-LAST:event_myButton1ActionPerformed
 
     private void lb_checkinfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_checkinfoMouseEntered

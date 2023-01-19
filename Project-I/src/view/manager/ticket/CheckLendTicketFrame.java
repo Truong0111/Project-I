@@ -49,6 +49,7 @@ public class CheckLendTicketFrame extends javax.swing.JFrame {
             daxulyjRadioButton2.setSelected(true);
             tf_datelend.setText(formatter.format(ticket.getLendDate()));
         }
+        setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.

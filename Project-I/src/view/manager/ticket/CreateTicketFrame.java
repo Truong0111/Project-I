@@ -46,6 +46,7 @@ public class CreateTicketFrame extends javax.swing.JFrame {
             BookRequestTicketForm brtf = new BookRequestTicketForm((BookRequestTicket) ticket, this);
             pn_main.add(brtf);
         }
+        setVisible(true);
         this.pack();
     }
     /**

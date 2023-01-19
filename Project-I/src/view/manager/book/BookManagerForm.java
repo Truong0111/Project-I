@@ -57,7 +57,6 @@ public class BookManagerForm extends javax.swing.JPanel {
         btn_editbook = new view.other.MyButton();
         btn_createbook = new view.other.MyButton();
         btn_addbook = new view.other.MyButton();
-        jLabel1 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_book = new javax.swing.JTable();
@@ -120,8 +119,6 @@ public class BookManagerForm extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ask.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -134,9 +131,7 @@ public class BookManagerForm extends javax.swing.JPanel {
                             .addComponent(jLabel5)
                             .addComponent(tf_searchname, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(85, 85, 85)
+                        .addGap(190, 190, 190)
                         .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,13 +162,11 @@ public class BookManagerForm extends javax.swing.JPanel {
                     .addComponent(tf_searchcategory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_searchauthor, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_editbook, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_createbook, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_addbook, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_editbook, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_createbook, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addbook, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
 
@@ -342,13 +335,11 @@ public class BookManagerForm extends javax.swing.JPanel {
         editbook = SelectBook(editbook);
         if (editbook != null) {
             EditBookFrame ebf = new EditBookFrame(editbook);
-            ebf.setVisible(true);
         }
     }//GEN-LAST:event_btn_editbookActionPerformed
 
     private void btn_createbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createbookActionPerformed
         CreateBookFrame cbf = new CreateBookFrame();
-        cbf.setVisible(true);
     }//GEN-LAST:event_btn_createbookActionPerformed
 
     private void btn_addbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addbookActionPerformed
@@ -357,7 +348,6 @@ public class BookManagerForm extends javax.swing.JPanel {
         addBook = SelectBook(addBook);
         if (addBook != null) {
             AddBookFrame abf  = new AddBookFrame(addBook);
-            abf.setVisible(true);
         }
     }//GEN-LAST:event_btn_addbookActionPerformed
     
@@ -381,7 +371,6 @@ public class BookManagerForm extends javax.swing.JPanel {
 
         if (selectedRowIndex == -1) {
             NofiDialog nd = new NofiDialog("Vui lòng chọn sách để chỉnh sửa");
-            nd.setVisible(true);
             return null;
         } else {
             String id = model.getValueAt(selectedRowIndex, 0).toString();
@@ -458,7 +447,6 @@ public class BookManagerForm extends javax.swing.JPanel {
     private view.other.MyButton btn_createbook;
     private view.other.MyButton btn_editbook;
     private view.other.MyButton btn_search;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

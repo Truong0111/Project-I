@@ -312,11 +312,9 @@ public class TicketManagerForm extends javax.swing.JPanel {
         Ticket createticket = SelectTicket();
         if(createticket != null){
             ChooseTypeTicket ctt = new ChooseTypeTicket(createticket);
-            ctt.setVisible(true);
         }
         else {
             ChooseTypeTicket ctt = new ChooseTypeTicket();
-            ctt.setVisible(true);
         }
     }//GEN-LAST:event_btn_createticketActionPerformed
 
@@ -325,15 +323,12 @@ public class TicketManagerForm extends javax.swing.JPanel {
         if(checkticket != null){
             if (checkticket instanceof BorrowTicket){
                 CheckBorrowTicketFrame ctf = new CheckBorrowTicketFrame((BorrowTicket)ticketController.getTicketById(checkticket.getId()));
-                ctf.setVisible(true);           
             }
             if (checkticket instanceof  LendTicket){
                 CheckLendTicketFrame ctf = new CheckLendTicketFrame(TicketController.getLendTicketById(checkticket.getId()));
-                ctf.setVisible(true);
             }
             if (checkticket instanceof  ExtendTicket){
                 CheckExtendTicketFrame ctf = new CheckExtendTicketFrame(TicketController.getExtendTicketByID(checkticket.getId()));
-                ctf.setVisible(true);
             }
         }
     }//GEN-LAST:event_btn_checkticketActionPerformed

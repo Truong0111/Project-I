@@ -156,66 +156,54 @@ public class LoadingFrame extends javax.swing.JFrame {
             progress.setMinimum(min);
             progress.setValue(0);
             
-            
+            boolean check = true;
             lb_des.setText("Kiểm tra hệ thống");
             progress.setValue(30);
-            try {
-                sleep(1500);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+            Sleep(1500);
             
             lb_des.setText("Kiểm tra kết nối cơ sở dữ liệu");
-            try {
-                sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+            Sleep(1000);
+            
             try {
                 Class.forName(MySQLConstand.CLASS_NAME);
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
             Connection conn;
+            
             long start = System.currentTimeMillis(); 
             do{
                 conn = getConn();
                 long end = System.currentTimeMillis();
-                if(end - start > 30000) ErrorConn();
+                if(end - start > 5000){
+                    ErrorConn();
+                    check = false;
+                }
             }
+            
             while(conn == null);
             lb_des.setText("Kết nối cơ sở dữ liệu thành công!");
             progress.setValue(60);
-            
-            
-            try {
-                sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Sleep(1000);
             
             lb_des.setText("Kiểm tra dữ liệu người dùng");
-            try {
-                sleep(500);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            // Kiem tra du lieu nguoi dung
+            Sleep(1000);
             progress.setValue(90);
+            
             lb_des.setText("Hoàn thành kiểm tra!");
             progress.setValue(100);
+            Sleep(1000);
             
-            try {
-                sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
+            if(!check){
+                //thong bao loi~
+            }
+            else{
+                LoginFrame lf = new LoginFrame();
             }
             dispose();
-            if (user.getAccount().getRole().equals("manager")) {
-                new ManagerFrame(user).setVisible(true);
-            } else {
-                new UserFrame(user).setVisible(true);
-            }
-            
         }
         
         public Connection getConn(){
@@ -230,9 +218,16 @@ public class LoadingFrame extends javax.swing.JFrame {
         
         public void ErrorConn(){
             lb_des.setText("Không thể kết nối với cơ sở dữ liệu, vui lòng thử lại");
+            Sleep(3000);
             dispose();
-            LoginFrame lf = new LoginFrame();
-            lf.setVisible(true);
+        }
+        
+        public void Sleep(int time){
+            try {
+                sleep(time);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoadingFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

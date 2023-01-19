@@ -42,6 +42,7 @@ public class CheckBorrowTicketFrame extends javax.swing.JFrame {
         else{
             daxulyjRadioButton2.setSelected(true);
         }
+        setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.

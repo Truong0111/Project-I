@@ -490,7 +490,6 @@ public class EditBookFrame extends javax.swing.JFrame {
                 || room.equals("") || shelf.equals("") || row.equals("") ) 
         {
             NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin");
-            nd.setVisible(true);
         } else {
            Location  location= new Location(room, shelf, Integer.parseInt(row));
            Book newBook = new Book(book.getId(), name, code, author, category, Short.valueOf(year), publiser, status, location);

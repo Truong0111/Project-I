@@ -8,7 +8,7 @@ import view.manager.user.UserManagerForm;
 import view.login.frame.LoginFrame;
 import java.awt.Frame;
 import model.user.User;
-import view.clock.ClockThread;
+import view.other.ClockThread;
 import view.manager.book.BookManagerForm;
 import view.manager.finance.FinanceManagerForm;
 import view.manager.ticket.TicketManagerForm;
@@ -70,13 +70,19 @@ public class ManagerFrame extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setUndecorated(true);
 
+        jPanel1.setBackground(new java.awt.Color(49, 127, 129));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPanel1MousePressed(evt);
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(49, 127, 129));
+
+        jPanel5.setBackground(new java.awt.Color(49, 127, 129));
+
         lb_hello.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lb_hello.setForeground(new java.awt.Color(255, 255, 255));
         lb_hello.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_hello.setText("hello");
         lb_hello.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -86,7 +92,7 @@ public class ManagerFrame extends javax.swing.JFrame {
             }
         });
 
-        myButton1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        myButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         myButton1.setText("Đăng xuất");
         myButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         myButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +122,11 @@ public class ManagerFrame extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        lb_usermanager.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel6.setBackground(new java.awt.Color(49, 127, 129));
+
+        lb_usermanager.setBackground(new java.awt.Color(49, 127, 129));
+        lb_usermanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lb_usermanager.setForeground(new java.awt.Color(255, 255, 255));
         lb_usermanager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_usermanager.setText("Quản lý người dùng");
         lb_usermanager.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -137,7 +147,11 @@ public class ManagerFrame extends javax.swing.JFrame {
             .addComponent(lb_usermanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        lb_bookmanager.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel10.setBackground(new java.awt.Color(49, 127, 129));
+
+        lb_bookmanager.setBackground(new java.awt.Color(49, 127, 129));
+        lb_bookmanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lb_bookmanager.setForeground(new java.awt.Color(255, 255, 255));
         lb_bookmanager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_bookmanager.setText("Quản lý sách");
         lb_bookmanager.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -158,7 +172,11 @@ public class ManagerFrame extends javax.swing.JFrame {
             .addComponent(lb_bookmanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        lb_ticketmanager.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel11.setBackground(new java.awt.Color(49, 127, 129));
+
+        lb_ticketmanager.setBackground(new java.awt.Color(49, 127, 129));
+        lb_ticketmanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lb_ticketmanager.setForeground(new java.awt.Color(255, 255, 255));
         lb_ticketmanager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_ticketmanager.setText("Quản lý phiếu");
         lb_ticketmanager.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -179,7 +197,11 @@ public class ManagerFrame extends javax.swing.JFrame {
             .addComponent(lb_ticketmanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        lb_financemanager.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel12.setBackground(new java.awt.Color(49, 127, 129));
+
+        lb_financemanager.setBackground(new java.awt.Color(49, 127, 129));
+        lb_financemanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lb_financemanager.setForeground(new java.awt.Color(255, 255, 255));
         lb_financemanager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_financemanager.setText("Quản lý tài chính");
         lb_financemanager.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -225,7 +247,10 @@ public class ManagerFrame extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jPanel3.setBackground(new java.awt.Color(49, 127, 129));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hệ thống quản lý sách thư viện");
         jLabel1.setToolTipText("");
@@ -258,6 +283,7 @@ public class ManagerFrame extends javax.swing.JFrame {
             }
         });
 
+        lb_clock.setForeground(new java.awt.Color(255, 255, 255));
         lb_clock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_clock.setText("clock");
 
@@ -368,8 +394,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
         this.dispose();
-        LoginFrame lf = new  LoginFrame();
-        lf.setVisible(true);
+        LoginFrame lf = new LoginFrame();
         DisInfoFrame();
     }//GEN-LAST:event_myButton1ActionPerformed
 
@@ -385,7 +410,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     private InfoFrame inf;
     public void ShowInfoFrame(){
         inf = new InfoFrame(user, lb_hello.getLocationOnScreen().x, lb_hello.getLocationOnScreen().y-305);
-        inf.setVisible(true);
         click = 1;
     }
     public void DisInfoFrame(){

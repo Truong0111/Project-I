@@ -26,6 +26,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
         this.user= user;
         initComponents();
         setLocationRelativeTo(null);
+        setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -219,12 +220,10 @@ public class ChangePassFrame extends javax.swing.JFrame {
             ac.updatePassWord(this.user.getAccount().getIdAccount(), newpass);
             
             NofiDialog nd = new NofiDialog("Đã đổi mật khẩu thành công");
-            nd.setVisible(true);
             dispose();
         }
         else{
             NofiDialog nd = new NofiDialog("Vui lòng xác nhận đúng mật khẩu");
-            nd.setVisible(true);
         }
     }//GEN-LAST:event_myButton1ActionPerformed
 

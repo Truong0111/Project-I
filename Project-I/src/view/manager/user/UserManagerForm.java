@@ -163,6 +163,7 @@ public class UserManagerForm extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
 
+        tb_user.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tb_user.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -186,8 +187,19 @@ public class UserManagerForm extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tb_user.setRowHeight(26);
         tb_user.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tb_user);
+        if (tb_user.getColumnModel().getColumnCount() > 0) {
+            tb_user.getColumnModel().getColumn(0).setHeaderValue("ID");
+            tb_user.getColumnModel().getColumn(1).setHeaderValue("Họ & Tên");
+            tb_user.getColumnModel().getColumn(2).setHeaderValue("Năm sinh");
+            tb_user.getColumnModel().getColumn(3).setHeaderValue("SĐT");
+            tb_user.getColumnModel().getColumn(4).setHeaderValue("CCCD/CMND");
+            tb_user.getColumnModel().getColumn(5).setHeaderValue("Mail");
+            tb_user.getColumnModel().getColumn(6).setHeaderValue("Tài khoản");
+            tb_user.getColumnModel().getColumn(7).setHeaderValue("Vai trò");
+        }
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -290,13 +302,11 @@ public class UserManagerForm extends javax.swing.JPanel {
         edituser = SelectUser(edituser);
         if(edituser != null){
             EditUserFrame euf = new EditUserFrame(edituser);
-            euf.setVisible(true);
         }
     }//GEN-LAST:event_btn_edituserActionPerformed
 
     private void btn_createuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createuserActionPerformed
         CreateUserFrame cuf = new CreateUserFrame();
-        cuf.setVisible(true);
     }//GEN-LAST:event_btn_createuserActionPerformed
 
     private void btn_changepassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_changepassActionPerformed
@@ -304,7 +314,6 @@ public class UserManagerForm extends javax.swing.JPanel {
         cpuser = SelectUser(cpuser);
         if(cpuser != null){
             ChangePassFrame cpf = new ChangePassFrame(cpuser);
-        cpf.setVisible(true);
         }
     }//GEN-LAST:event_btn_changepassActionPerformed
     
@@ -351,7 +360,6 @@ public class UserManagerForm extends javax.swing.JPanel {
         
         if(selectedRowIndex == -1){
             NofiDialog nd = new NofiDialog("Vui lòng chọn người để chỉnh sửa");
-            nd.setVisible(true);
             return null;
         }
         else{

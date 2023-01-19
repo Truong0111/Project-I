@@ -83,9 +83,7 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
                               <Component id="btn_search" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -125,14 +123,11 @@
                           <Component id="tf_searchauthor" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btn_search" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="btn_editbook" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="btn_createbook" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="btn_addbook" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btn_search" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btn_editbook" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btn_createbook" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btn_addbook" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -252,13 +247,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_addbookActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/ask.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

@@ -156,20 +156,16 @@ public class LendTicketForm extends javax.swing.JPanel {
         Ticket ticket = TicketController.getBorrowTicketById(idBorrowTicket);
         if (ticket == null) {
             NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin phiếu mượn");
-            nd.setVisible(true);
         } else {
             if (TicketController.getLendTicketByIdBorrow(ticket.getId()).getStatus().equals("Đã xử lý")) {
                 NofiDialog nd = new NofiDialog("Phiếu trả đã được xử lý");
-                nd.setVisible(true);
 
             } else {
                 try {
                     PenaltyTicketInfor penaltyTicketInfor = new PenaltyTicketInfor((BorrowTicket) ticket);
-                    penaltyTicketInfor.setVisible(true);
-                    this.setVisible(false);
+                    ctf.dispose();
                 } catch (Exception e) {
                     NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin ");
-                    nd.setVisible(true);
                     System.out.println(e.getMessage());
                 }
             }

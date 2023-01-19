@@ -72,6 +72,7 @@ public class PenaltyTicketInfor extends javax.swing.JFrame {
         System.out.println(dateLate);
         System.out.println(currentDate);
         System.out.println(returnDate);
+        setVisible(true);
     }
 
     /**
@@ -451,7 +452,7 @@ public class PenaltyTicketInfor extends javax.swing.JFrame {
             ticketController.addPenaltyTicket(penaltyValue, borrowTicket.getId());
             financeController.addFinance(penaltyValue, "thu", "tiền phạt nộp muộn "+String.valueOf(borrowTicket.getId()));
             }
-             this.setVisible(false);
+            dispose();
         } catch (Exception e) {
             System.out.println(e.getMessage()+"999");
         }

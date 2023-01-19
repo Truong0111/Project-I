@@ -5,9 +5,9 @@
 package view.manager.user;
 
 import controller.AccountController;
-import javax.swing.JOptionPane;
 import model.user.Account;
 import model.user.User;
+import view.other.NofiDialog;
 
 /**
  *
@@ -32,6 +32,7 @@ public class EditUserFrame extends javax.swing.JFrame {
         tf_yearbd.setText(String.valueOf(user.getYearBirthday()));
         tf_phone.setText(user.getPhoneNumber());
         tf_mail.setText(user.getAccount().getMail());
+        setVisible(true);
     }
 
     /**
@@ -353,10 +354,10 @@ public class EditUserFrame extends javax.swing.JFrame {
         Account accountAfterUpdate = new Account(mail, userName, "password", account.getIdAccount(), account.getRole());
         User userAfterUpdate= new User(name, yearbd, phone, idCard, accountAfterUpdate);
         if (accountController.updateUser(this.user.getAccount().getIdAccount(), userAfterUpdate)){
-        this.setVisible(false);
+        dispose();
         }
         else{
-                    JOptionPane.showMessageDialog(null, "Chỉnh sửa không hợp lệ");
+            NofiDialog nd = new NofiDialog("Chỉnh sửa không hợp lệ");
         }
     }//GEN-LAST:event_myButton1ActionPerformed
 

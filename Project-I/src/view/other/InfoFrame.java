@@ -23,6 +23,7 @@ public class InfoFrame extends javax.swing.JFrame {
         this.user = user;
         initComponents();
         this.setLocation(h, w);
+        setVisible(true);
     }
     
     /** This method is called from within the constructor to

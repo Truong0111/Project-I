@@ -163,21 +163,17 @@ public class ExtendTicketForm extends javax.swing.JPanel {
         BorrowTicket ticket = TicketController.getBorrowTicketById(idBorrowTicket);
         if (ticket == null) {
             NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin phiếu mượn");
-            nd.setVisible(true);
         }
         else{
             if (TicketController.getExtendTicketByIDBorrow(ticket.getId())!= null ) {
             NofiDialog nd = new NofiDialog("Phiếu mượn đã được gia hạn");
-            nd.setVisible(true);
             }            
             else{
             try {
                 ticketController.addExtendTicket(idBorrowTicket);
-                this.setVisible(false);
-                ctf.setVisible(false);
+                ctf.dispose();
             } catch (Exception e) {
                 NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin ");
-                nd.setVisible(true);
             }
         }
         }

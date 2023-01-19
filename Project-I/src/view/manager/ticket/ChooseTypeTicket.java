@@ -31,6 +31,7 @@ public class ChooseTypeTicket extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.ticket = ticket;
         lb_title.setText("Bạn đang chọn phiếu có ID:" + ticket.getId());
+        setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -142,21 +143,18 @@ public class ChooseTypeTicket extends javax.swing.JFrame {
         BorrowTicket bt = new BorrowTicket();
         CreateTicketFrame ctf = new CreateTicketFrame(bt);
         this.dispose();
-        ctf.setVisible(true);
     }//GEN-LAST:event_btn_borrowActionPerformed
 
     private void btn_extendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_extendActionPerformed
         ExtendTicket et = new ExtendTicket();
         CreateTicketFrame ctf = new CreateTicketFrame(et);
         this.dispose();
-        ctf.setVisible(true);
     }//GEN-LAST:event_btn_extendActionPerformed
 
     private void btn_lendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lendActionPerformed
         LendTicket lt = new LendTicket();
         CreateTicketFrame ctf = new CreateTicketFrame(lt);
         this.dispose();
-        ctf.setVisible(true);
     }//GEN-LAST:event_btn_lendActionPerformed
 
     /**

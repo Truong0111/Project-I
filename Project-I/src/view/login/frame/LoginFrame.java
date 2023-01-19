@@ -7,10 +7,13 @@ package view.login.frame;
 import controller.Decode;
 import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
+import java.awt.Color;
+import java.awt.Frame;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.BorderFactory;
 import model.user.Account;
 import model.user.User;
 import view.manager.ManagerFrame;
@@ -30,6 +33,7 @@ public class LoginFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Hệ thống quản lý sách thư viện");
+        setVisible(true);
     }
     
 
@@ -68,11 +72,14 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tf_username = new javax.swing.JTextField();
         tf_password = new javax.swing.JPasswordField();
-        btn_login = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        myButton1 = new view.other.MyButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jPanel4.setLayout(null);
@@ -92,33 +99,65 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel4.add(jLabel3);
         jLabel3.setBounds(140, 270, 119, 50);
 
-        tf_username.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_username.setBackground(new java.awt.Color(238, 230, 227));
+        tf_username.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        tf_username.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         jPanel4.add(tf_username);
         tf_username.setBounds(300, 190, 257, 50);
 
-        tf_password.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_password.setBackground(new java.awt.Color(238, 230, 227));
+        tf_password.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        tf_password.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tf_passwordKeyPressed(evt);
             }
         });
         jPanel4.add(tf_password);
-        tf_password.setBounds(300, 270, 257, 50);
-
-        btn_login.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_login.setText("Đăng nhập");
-        btn_login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_loginActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btn_login);
-        btn_login.setBounds(540, 360, 98, 43);
+        tf_password.setBounds(300, 280, 257, 50);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ask.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.add(jLabel5);
         jLabel5.setBounds(120, 380, 40, 40);
+
+        myButton1.setBorder(null);
+        myButton1.setText("Đăng nhập");
+        myButton1.setBorderColor(new java.awt.Color(238, 230, 227));
+        myButton1.setColor(new java.awt.Color(0, 204, 204));
+        myButton1.setColorClick(new java.awt.Color(0, 102, 102));
+        myButton1.setColorOver(new java.awt.Color(0, 153, 153));
+        myButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        myButton1.setRadius(40);
+        myButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(myButton1);
+        myButton1.setBounds(520, 360, 110, 40);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("✖");
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(770, 0, 30, 30);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("➖");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jLabel7);
+        jLabel7.setBounds(740, 0, 30, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/loginbackground.jpg"))); // NOI18N
         jPanel4.add(jLabel4);
@@ -137,36 +176,6 @@ public class LoginFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        try{
-            checkAccount();
-            Class.forName(MySQLConstand.CLASS_NAME);
-            Connection conn = getJDBCConnection();
-            Statement stm = conn.createStatement();
-
-            String idUser = String.valueOf(account.getIdAccount());
-            String role = account.getRole();
-
-            String sql = "select * from user where idUser='" + idUser + "'";
-            ResultSet rs = stm.executeQuery(sql);
-            
-            
-            if(rs.next()){
-                user.setAccount(account);
-                user.setName(rs.getString("name"));
-                user.setYearBirthday(Integer.parseInt(rs.getString("yearbirthday")));
-                user.setPhoneNumber(rs.getString("phonenumber"));
-                user.setIdCard(rs.getString("idcard"));
-                LoadingFrame lf = new LoadingFrame(user);
-                lf.setVisible(true);
-                dispose();
-            }
-            conn.close();
-        } catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }//GEN-LAST:event_btn_loginActionPerformed
 
     private void tf_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_passwordKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
@@ -188,16 +197,60 @@ public class LoginFrame extends javax.swing.JFrame {
                 user.setYearBirthday(Integer.parseInt(rs.getString("yearbirthday")));
                 user.setPhoneNumber(rs.getString("phonenumber"));
                 user.setIdCard(rs.getString("idcard"));
-                LoadingFrame lf = new LoadingFrame(user);
-                lf.setVisible(true);
+                if (user.getAccount().getRole().equals("manager")) {
+                    new ManagerFrame(user).setVisible(true);
+                } else {
+                    new UserFrame(user).setVisible(true);
+                }
+                dispose();
+            }
+            conn.close();
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+          }
+        }
+    }//GEN-LAST:event_tf_passwordKeyPressed
+
+    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
+        try{
+            checkAccount();
+            Class.forName(MySQLConstand.CLASS_NAME);
+            Connection conn = getJDBCConnection();
+            Statement stm = conn.createStatement();
+
+            String idUser = String.valueOf(account.getIdAccount());
+            String role = account.getRole();
+
+            String sql = "select * from user where idUser='" + idUser + "'";
+            ResultSet rs = stm.executeQuery(sql);
+            
+            
+            if(rs.next()){
+                user.setAccount(account);
+                user.setName(rs.getString("name"));
+                user.setYearBirthday(Integer.parseInt(rs.getString("yearbirthday")));
+                user.setPhoneNumber(rs.getString("phonenumber"));
+                user.setIdCard(rs.getString("idcard"));
+                if (user.getAccount().getRole().equals("manager")) {
+                    new ManagerFrame(user).setVisible(true);
+                } else {
+                    new UserFrame(user).setVisible(true);
+                }
                 dispose();
             }
             conn.close();
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
-        }
-    }//GEN-LAST:event_tf_passwordKeyPressed
+    }//GEN-LAST:event_myButton1ActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_jLabel7MouseClicked
     
     public void checkAccount(){
         try {
@@ -224,7 +277,6 @@ public class LoginFrame extends javax.swing.JFrame {
             }
             else{
                 NofiDialog nd = new NofiDialog("Sai tên đăng nhập hoặc mật khẩu");
-                nd.setVisible(true);
             }
             conn.close();
             
@@ -269,13 +321,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel4;
+    private view.other.MyButton myButton1;
     private javax.swing.JPasswordField tf_password;
     private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
