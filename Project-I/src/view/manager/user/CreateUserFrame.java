@@ -6,7 +6,6 @@ package view.manager.user;
 
 import controller.AccountController;
 import controller.FinanceController;
-import model.finance.Finance;
 import model.user.User;
 import view.other.NofiDialog;
 
@@ -15,8 +14,7 @@ import view.other.NofiDialog;
  * @author Administrator
  */
 public class CreateUserFrame extends javax.swing.JFrame {
-
-    private User user;
+    private UserManagerForm umf;
     private AccountController accountController = new AccountController();
 
     /**
@@ -26,6 +24,13 @@ public class CreateUserFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        
+    }
+    public CreateUserFrame(UserManagerForm umf) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
+        this.umf = umf;
     }
 
     /**
@@ -442,15 +447,14 @@ public class CreateUserFrame extends javax.swing.JFrame {
                 ///// tạo tài khooản
                 if (accountController.addUser(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role)) {
                     FinanceController financeController= new FinanceController();
-                    financeController.addFinance(50000, "thu", "tạo tài khoản "+phone);
+                    financeController.addFinance(50000, "thu", "tạo tài khoản " + phone);
                     dispose();
                 } else {
                     NofiDialog nd = new NofiDialog("Nhập thông tin không hợp lệ");
                 }
             }
         }
-
-
+        this.umf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed
 
     /**
