@@ -4,12 +4,14 @@
  */
 package view.user;
 
+import java.awt.Color;
 import view.login.frame.LoginFrame;
 import java.awt.Frame;
 import model.user.User;
 import view.user.checkinfo.CheckInfoForm;
 import view.user.search.SearchBookForm;
 import view.other.ClockThread;
+import view.other.MyButton;
 
 /**
  *
@@ -23,6 +25,8 @@ public class UserFrame extends javax.swing.JFrame {
     public UserFrame() {
         initComponents();
         setLocationRelativeTo(null);
+        ClockThread th= new ClockThread(lb_clock);
+        th.start();
     }
     
     public UserFrame(User user) {
@@ -42,19 +46,18 @@ public class UserFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popmenu = new javax.swing.JPopupMenu();
+        logout = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lb_hello = new javax.swing.JLabel();
-        myButton1 = new view.other.MyButton();
-        jPanel6 = new javax.swing.JPanel();
-        lb_searchbook = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        lb_checkbookborrow = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        lb_checkticket = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        lb_checkinfo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        btn_search = new view.other.MyButton();
+        btn_userinfo = new view.other.MyButton();
+        btn_ticketinfo = new view.other.MyButton();
+        btn_borrowinfo = new view.other.MyButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -62,21 +65,41 @@ public class UserFrame extends javax.swing.JFrame {
         lb_clock = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         pn_main = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+
+        popmenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        popmenu.setPreferredSize(new java.awt.Dimension(247, 50));
+
+        logout.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        logout.setText("Đăng xuất");
+        logout.setPreferredSize(new java.awt.Dimension(117, 28));
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        popmenu.add(logout);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1430, 794));
+
+        jPanel1.setBackground(new java.awt.Color(49, 127, 129));
+
+        jPanel2.setBackground(new java.awt.Color(49, 127, 129));
+
+        jPanel5.setBackground(new java.awt.Color(49, 127, 129));
 
         lb_hello.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lb_hello.setForeground(new java.awt.Color(255, 255, 255));
         lb_hello.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_hello.setText("hello");
-
-        myButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        myButton1.setText("Đăng xuất");
-        myButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        myButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton1ActionPerformed(evt);
+        lb_hello.setComponentPopupMenu(popmenu);
+        lb_hello.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_hello.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_helloMousePressed(evt);
             }
         });
 
@@ -86,121 +109,123 @@ public class UserFrame extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(myButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lb_hello, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lb_hello, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lb_hello, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(myButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addComponent(lb_hello, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        lb_searchbook.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lb_searchbook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_searchbook.setText("Tìm kiếm sách");
-        lb_searchbook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lb_searchbook.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_searchbookMouseClicked(evt);
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+
+        btn_search.setBackground(new java.awt.Color(49, 127, 129));
+        btn_search.setBorder(null);
+        btn_search.setForeground(new java.awt.Color(255, 255, 255));
+        btn_search.setText("Tìm kiếm sách");
+        btn_search.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_search.setBorderPainted(false);
+        btn_search.setColor(new java.awt.Color(49, 127, 129));
+        btn_search.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_search.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_search.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_search.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_search.setRadius(20);
+        btn_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_searchActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_searchbook, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_searchbook, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        lb_checkbookborrow.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lb_checkbookborrow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_checkbookborrow.setText("Thông tin sách mượn");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_checkbookborrow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_checkbookborrow, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        lb_checkticket.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lb_checkticket.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_checkticket.setText("Thông tin phiếu");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_checkticket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_checkticket, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        lb_checkinfo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lb_checkinfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_checkinfo.setText("Kiểm tra thông tin");
-        lb_checkinfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_checkinfoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lb_checkinfoMouseEntered(evt);
+        btn_userinfo.setBackground(new java.awt.Color(49, 127, 129));
+        btn_userinfo.setBorder(null);
+        btn_userinfo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_userinfo.setText("Kiểm tra thông tin");
+        btn_userinfo.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_userinfo.setBorderPainted(false);
+        btn_userinfo.setColor(new java.awt.Color(49, 127, 129));
+        btn_userinfo.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_userinfo.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_userinfo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_userinfo.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_userinfo.setRadius(20);
+        btn_userinfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_userinfoActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_checkinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_checkinfo, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
+        btn_ticketinfo.setBackground(new java.awt.Color(49, 127, 129));
+        btn_ticketinfo.setBorder(null);
+        btn_ticketinfo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ticketinfo.setText("Thông tin phiếu");
+        btn_ticketinfo.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_ticketinfo.setBorderPainted(false);
+        btn_ticketinfo.setColor(new java.awt.Color(49, 127, 129));
+        btn_ticketinfo.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_ticketinfo.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_ticketinfo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_ticketinfo.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_ticketinfo.setRadius(20);
+
+        btn_borrowinfo.setBackground(new java.awt.Color(49, 127, 129));
+        btn_borrowinfo.setBorder(null);
+        btn_borrowinfo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_borrowinfo.setText("Thông tin sách mượn");
+        btn_borrowinfo.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_borrowinfo.setBorderPainted(false);
+        btn_borrowinfo.setColor(new java.awt.Color(49, 127, 129));
+        btn_borrowinfo.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_borrowinfo.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_borrowinfo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_borrowinfo.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_borrowinfo.setRadius(20);
+        btn_borrowinfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_borrowinfoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_userinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_ticketinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_borrowinfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                    .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_borrowinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_ticketinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 368, Short.MAX_VALUE)
+                .addComponent(btn_userinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 399, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(49, 127, 129));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hệ thống quản lý sách thư viện");
         jLabel1.setToolTipText("");
@@ -215,6 +240,7 @@ public class UserFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("✖");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -224,6 +250,7 @@ public class UserFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("➖");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -233,6 +260,8 @@ public class UserFrame extends javax.swing.JFrame {
             }
         });
 
+        lb_clock.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lb_clock.setForeground(new java.awt.Color(255, 255, 255));
         lb_clock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_clock.setText("clock");
 
@@ -241,25 +270,36 @@ public class UserFrame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(lb_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lb_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1037, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(lb_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel4.setBackground(new java.awt.Color(245, 245, 245));
         jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        pn_main.setBackground(new java.awt.Color(245, 245, 245));
         pn_main.setLayout(new java.awt.BorderLayout());
+
+        jLabel4.setBackground(new java.awt.Color(245, 245, 245));
+        jLabel4.setFont(new java.awt.Font("Arial", 2, 20)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Kết hợp những điều hiểu biết với những kinh nghiệm và kiến thức sẵn có - đó là nguyên tắc cần thiết khi lựa chọn sách. ");
+        pn_main.add(jLabel4, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -267,7 +307,7 @@ public class UserFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pn_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pn_main, javax.swing.GroupLayout.DEFAULT_SIZE, 1149, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -311,19 +351,12 @@ public class UserFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lb_searchbookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_searchbookMouseClicked
-        pn_main.removeAll();
-        SearchBookForm sbf = new SearchBookForm();
-        pn_main.add(sbf);
-        pack();
-    }//GEN-LAST:event_lb_searchbookMouseClicked
     
     private int xMouse,yMouse;
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x - xMouse - 125, y - yMouse);
+        this.setLocation(x - xMouse - 251, y - yMouse);
     }//GEN-LAST:event_jLabel1MouseDragged
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
@@ -339,22 +372,42 @@ public class UserFrame extends javax.swing.JFrame {
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         this.dispose();
-        LoginFrame lf = new  LoginFrame();
-    }//GEN-LAST:event_myButton1ActionPerformed
+        LoginFrame lf = new LoginFrame();
+    }//GEN-LAST:event_logoutActionPerformed
 
-    private void lb_checkinfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_checkinfoMouseEntered
-         lb_checkinfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_lb_checkinfoMouseEntered
+    private void lb_helloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_helloMousePressed
+        popmenu.show(lb_hello, 50, -50);
+    }//GEN-LAST:event_lb_helloMousePressed
 
-    private void lb_checkinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_checkinfoMouseClicked
+    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
+        pn_main.removeAll();
+        SearchBookForm sbf = new SearchBookForm();
+        pn_main.add(sbf);
+        isSelect(btn_search);
+        pack();
+    }//GEN-LAST:event_btn_searchActionPerformed
+
+    private void btn_userinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_userinfoActionPerformed
         pn_main.removeAll();
         CheckInfoForm cif = new CheckInfoForm(user);
         pn_main.add(cif);
+        isSelect(btn_userinfo);
         pack();
-    }//GEN-LAST:event_lb_checkinfoMouseClicked
+    }//GEN-LAST:event_btn_userinfoActionPerformed
 
+    private void btn_borrowinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowinfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_borrowinfoActionPerformed
+
+    public void isSelect(MyButton btn){
+        btn_search.setColor(new Color(49,127,129));
+        btn_borrowinfo.setColor(new Color(49,127,129));
+        btn_ticketinfo.setColor(new Color(49,127,129));
+        btn_userinfo.setColor(new Color(49,127,129));
+        btn.setColor(new Color(63,163,166));
+    }
     /**
      * @param args the command line arguments
      */
@@ -391,25 +444,25 @@ public class UserFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private view.other.MyButton btn_borrowinfo;
+    private view.other.MyButton btn_search;
+    private view.other.MyButton btn_ticketinfo;
+    private view.other.MyButton btn_userinfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel lb_checkbookborrow;
-    private javax.swing.JLabel lb_checkinfo;
-    private javax.swing.JLabel lb_checkticket;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lb_clock;
     private javax.swing.JLabel lb_hello;
-    private javax.swing.JLabel lb_searchbook;
-    private view.other.MyButton myButton1;
+    private javax.swing.JMenuItem logout;
     private javax.swing.JPanel pn_main;
+    private javax.swing.JPopupMenu popmenu;
     // End of variables declaration//GEN-END:variables
 }

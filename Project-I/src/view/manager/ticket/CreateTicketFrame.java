@@ -33,18 +33,22 @@ public class CreateTicketFrame extends javax.swing.JFrame {
         if(ticket instanceof BorrowTicket){
             BorrowTicketForm btf = new BorrowTicketForm((BorrowTicket) ticket,this);
             pn_main.add(btf);
+            jLabel6.setText("Tạo phiếu mượn");
         }
         else if(ticket instanceof ExtendTicket){
             ExtendTicketForm etf = new ExtendTicketForm((ExtendTicket) ticket, this);
             pn_main.add(etf);
+            jLabel6.setText("Tạo phiếu gia hạn");
         }
         else if(ticket instanceof LendTicket){
             LendTicketForm ltf = new LendTicketForm((LendTicket) ticket, this);
             pn_main.add(ltf);
+            jLabel6.setText("Tạo phiếu trả");
         }
         else {
             BookRequestTicketForm brtf = new BookRequestTicketForm((BookRequestTicket) ticket, this);
             pn_main.add(brtf);
+            jLabel6.setText("Tạo phiếu đăng kí sách");
         }
         setVisible(true);
         this.pack();

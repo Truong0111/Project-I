@@ -4,11 +4,9 @@
  */
 package view.manager.ticket;
 
-import model.ticket.BookRequestTicket;
 import model.ticket.BorrowTicket;
 import model.ticket.ExtendTicket;
 import model.ticket.LendTicket;
-import model.ticket.PenaltyTicket;
 import model.ticket.Ticket;
 
 /**
@@ -24,6 +22,7 @@ public class ChooseTypeTicket extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         lb_title.setText("Bạn đang không chọn phiếu nào!");
+        setVisible(true);
     }
     
     public ChooseTypeTicket(Ticket ticket) {

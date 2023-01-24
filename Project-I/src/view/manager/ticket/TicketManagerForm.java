@@ -7,6 +7,7 @@ package view.manager.ticket;
 import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
 import controller.TicketController;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,7 +22,6 @@ import model.ticket.LendTicket;
 import model.ticket.PenaltyTicket;
 import model.ticket.Ticket;
 import model.user.User;
-import view.other.NofiDialog;
 
 /**
  *
@@ -44,6 +44,9 @@ public class TicketManagerForm extends javax.swing.JPanel {
     
     public TicketManagerForm() {
         initComponents();
+        tb_ticket.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,16));
+        tb_ticket.getTableHeader().setOpaque(false);
+        jPanel9.setVisible(false);
     }
 
     /**
@@ -55,6 +58,8 @@ public class TicketManagerForm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ticketmenu = new javax.swing.JPopupMenu();
+        checkticket = new javax.swing.JMenuItem();
         jPanel11 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -62,7 +67,6 @@ public class TicketManagerForm extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         tf_searchid = new javax.swing.JTextField();
         btn_search = new view.other.MyButton();
-        btn_checkticket = new view.other.MyButton();
         btn_createticket = new view.other.MyButton();
         jcb_type = new javax.swing.JComboBox<>();
         jcb_status = new javax.swing.JComboBox<>();
@@ -70,6 +74,21 @@ public class TicketManagerForm extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_ticket = new javax.swing.JTable();
         lb_checknumber = new javax.swing.JLabel();
+
+        checkticket.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        checkticket.setText("Kiểm tra thông tin phiếu");
+        checkticket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkticketActionPerformed(evt);
+            }
+        });
+        ticketmenu.add(checkticket);
+
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel11.setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel10.setBackground(new java.awt.Color(245, 245, 245));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel8.setText("Tìm theo ID phiếu");
@@ -92,16 +111,6 @@ public class TicketManagerForm extends javax.swing.JPanel {
             }
         });
 
-        btn_checkticket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btn_checkticket.setText("Kiểm tra phiếu");
-        btn_checkticket.setDefaultCapable(false);
-        btn_checkticket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_checkticket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_checkticketActionPerformed(evt);
-            }
-        });
-
         btn_createticket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btn_createticket.setText("Tạo mới");
         btn_createticket.setDefaultCapable(false);
@@ -114,44 +123,34 @@ public class TicketManagerForm extends javax.swing.JPanel {
 
         jcb_type.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jcb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phiếu mượn", "Phiếu gia hạn", "Phiếu trả", "Phiếu phạt", "Phiếu yêu cầu sách" }));
-        jcb_type.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcb_typeActionPerformed(evt);
-            }
-        });
+        jcb_type.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jcb_status.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jcb_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Đã xử lý", "Chưa xử lý", "" }));
+        jcb_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Đã xử lý", "Chưa xử lý" }));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(tf_searchid, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcb_type, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(55, 55, 55)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(tf_searchid, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jcb_type, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(btn_createticket, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(92, 92, 92)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcb_status, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(btn_checkticket, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addComponent(jcb_status, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(btn_createticket, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,18 +161,16 @@ public class TicketManagerForm extends javax.swing.JPanel {
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jcb_type, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_searchid, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcb_status, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_createticket, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_checkticket, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 15, 15))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tf_searchid)
+                    .addComponent(jcb_type, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(jcb_status)
+                    .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_createticket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
+
+        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
 
         tb_ticket.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tb_ticket.setModel(new javax.swing.table.DefaultTableModel(
@@ -199,7 +196,9 @@ public class TicketManagerForm extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tb_ticket.setRowHeight(25);
+        tb_ticket.setComponentPopupMenu(ticketmenu);
+        tb_ticket.setRowHeight(26);
+        tb_ticket.setSelectionBackground(new java.awt.Color(232, 57, 95));
         tb_ticket.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tb_ticket);
 
@@ -219,7 +218,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lb_checknumber, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(lb_checknumber, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -263,6 +262,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_searchbtn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchbtn_searchActionPerformed
+        jPanel9.setVisible(true);
         try {
             Class.forName(MySQLConstand.CLASS_NAME);
             Connection conn = getJDBCConnection();
@@ -318,7 +318,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btn_createticketActionPerformed
 
-    private void btn_checkticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_checkticketActionPerformed
+    private void checkticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkticketActionPerformed
         Ticket checkticket = SelectTicket();
         if(checkticket != null){
             if (checkticket instanceof BorrowTicket){
@@ -331,11 +331,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
                 CheckExtendTicketFrame ctf = new CheckExtendTicketFrame(TicketController.getExtendTicketByID(checkticket.getId()));
             }
         }
-    }//GEN-LAST:event_btn_checkticketActionPerformed
-
-    private void jcb_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_typeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcb_typeActionPerformed
+    }//GEN-LAST:event_checkticketActionPerformed
     
     public void ClearDataTable() {
         DefaultTableModel tbmodel = (DefaultTableModel) tb_ticket.getModel();
@@ -458,7 +454,6 @@ public class TicketManagerForm extends javax.swing.JPanel {
                 String status = rs.getString("status");
                 
                 ticket.setId(idTicket);
-                System.out.println(idTicket);
                 ticket.setBook(searchBookByID(idBook));
                 ticket.setBorrower(searchUserByID(idUser));
 //                ticket.setDateCreate(dateCreate);
@@ -590,7 +585,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
 //                ticket.setDateCreate(dateCreate);
                 ticket.setName(name);
                 ticket.setAuthor(author);
-//                ticket.setStatus();
+                ticket.setStatus(status);
             }
             conn.close();
         } catch (Exception e) {
@@ -601,9 +596,9 @@ public class TicketManagerForm extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.other.MyButton btn_checkticket;
     private view.other.MyButton btn_createticket;
     private view.other.MyButton btn_search;
+    private javax.swing.JMenuItem checkticket;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -616,5 +611,6 @@ public class TicketManagerForm extends javax.swing.JPanel {
     private javax.swing.JLabel lb_checknumber;
     private javax.swing.JTable tb_ticket;
     private javax.swing.JTextField tf_searchid;
+    private javax.swing.JPopupMenu ticketmenu;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,8 +14,8 @@ import view.other.NofiDialog;
  * @author Administrator
  */
 public class CreateBookFrame extends javax.swing.JFrame {
-     private User user;
-     private BookController bookController = new BookController();
+    private BookManagerForm bmf;
+    private BookController bookController = new BookController();
      
     /**
      * Creates new form CreateBookFrame
@@ -24,6 +24,12 @@ public class CreateBookFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+    public CreateBookFrame(BookManagerForm bmf) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
+        this.bmf = bmf;
     }
 
     /**
@@ -465,8 +471,8 @@ public class CreateBookFrame extends javax.swing.JFrame {
            bookController.addBook(name, code, author, category, Short.valueOf(year), publiser, status, location);
            
         }
-        
-        
+        this.bmf.Search();
+        dispose();
     }//GEN-LAST:event_myButton1ActionPerformed
 
     /**

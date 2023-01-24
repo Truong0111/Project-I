@@ -25,7 +25,7 @@ public class FinanceManagerForm extends javax.swing.JPanel {
      */
     public FinanceManagerForm() {
         initComponents();
-//        tb_finance.setVisible(false);
+        jPanel2.setVisible(false);
     }
 
     /**
@@ -51,6 +51,10 @@ public class FinanceManagerForm extends javax.swing.JPanel {
         tf_thu = new javax.swing.JTextField();
         tf_chi = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Ngày bắt đầu");
 
@@ -58,7 +62,7 @@ public class FinanceManagerForm extends javax.swing.JPanel {
         jLabel2.setText("Ngày kết thúc");
 
         j_enddate.setDateFormatString("yyyy - MM - dd");
-        j_enddate.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        j_enddate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         btn_ok.setText("OK");
         btn_ok.setToolTipText("");
@@ -69,7 +73,7 @@ public class FinanceManagerForm extends javax.swing.JPanel {
         });
 
         j_fromdate.setDateFormatString("yyyy - MM - dd");
-        j_fromdate.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        j_fromdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,7 +105,9 @@ public class FinanceManagerForm extends javax.swing.JPanel {
                 .addGap(49, 49, 49))
         );
 
-        tb_finance.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+
+        tb_finance.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tb_finance.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -125,6 +131,7 @@ public class FinanceManagerForm extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tb_finance.setRowHeight(26);
         jScrollPane1.setViewportView(tb_finance);
         if (tb_finance.getColumnModel().getColumnCount() > 0) {
             tb_finance.getColumnModel().getColumn(4).setResizable(false);
@@ -195,6 +202,7 @@ public class FinanceManagerForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
+        jPanel2.setVisible(true);
         try {
                        
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

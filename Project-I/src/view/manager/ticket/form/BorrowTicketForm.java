@@ -4,9 +4,14 @@
  */
 package view.manager.ticket.form;
 
+import static config.JDBCConnection.getJDBCConnection;
+import constand.MySQLConstand;
 import controller.AccountController;
 import controller.BookController;
 import controller.TicketController;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Date;
 import model.book.Book;
 import model.ticket.BorrowTicket;
@@ -37,6 +42,9 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         initComponents();
         this.ctf = ctf;
         this.borrowticket = ticket;
+        if(ticket.getBook() != null){
+            tf_idbook.setText(String.valueOf(ticket.getBook().getId()));
+        }
     }
 
     /**
@@ -48,11 +56,14 @@ public class BorrowTicketForm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        usermenu = new javax.swing.JPopupMenu();
+        user1 = new javax.swing.JMenuItem();
+        user2 = new javax.swing.JMenuItem();
+        user3 = new javax.swing.JMenuItem();
+        bookmenu = new javax.swing.JPopupMenu();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         tf_idbook = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -61,32 +72,70 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         myButton2 = new view.other.MyButton();
         myButton1 = new view.other.MyButton();
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        usermenu.setPreferredSize(new java.awt.Dimension(320, 150));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel2.setText("ID Sách");
+        user1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        user1.setText("jMenuItem1");
+        user1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        user1.setPreferredSize(new java.awt.Dimension(320, 30));
+        user1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                user1ActionPerformed(evt);
+            }
+        });
+        usermenu.add(user1);
+
+        user2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        user2.setText("jMenuItem2");
+        user2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        user2.setPreferredSize(new java.awt.Dimension(320, 30));
+        user2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                user2ActionPerformed(evt);
+            }
+        });
+        usermenu.add(user2);
+
+        user3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        user3.setText("jMenuItem3");
+        user3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        user3.setPreferredSize(new java.awt.Dimension(320, 30));
+        user3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                user3ActionPerformed(evt);
+            }
+        });
+        usermenu.add(user3);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel3.setText("ID Sách");
 
         tf_idbook.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_idbook.setComponentPopupMenu(bookmenu);
+        tf_idbook.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_idbookKeyPressed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tf_idbook, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(146, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(tf_idbook, javax.swing.GroupLayout.Alignment.LEADING))
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tf_idbook, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -95,6 +144,16 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         jLabel1.setText("ID người mượn");
 
         tf_iduser.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_iduser.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tf_iduserFocusLost(evt);
+            }
+        });
+        tf_iduser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tf_iduserKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -147,81 +206,73 @@ public class BorrowTicketForm extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(446, Short.MAX_VALUE))
-        );
-
-        jScrollPane1.setViewportView(jPanel2);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
-       
         int iduser = Integer.parseInt(tf_iduser.getText());
         int idBook = Integer.parseInt(tf_idbook.getText());
         Book book = BookController.getBookById(idBook);
         User user = AccountController.getUserById(iduser);
-        if (user== null){
+        if (user ==  null){
             NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin người dùng");
         }
-        if (!user.getAccount().getRole().equals("user")) {
-            NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin người dùng");
-        } else {
+        else if (!user.getAccount().getRole().equals("user")) {
+            NofiDialog nd = new NofiDialog("Quản lí không thể mượn sách");
+        } 
+        else {
             if (book == null) {
                 NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin sách");
             } else {
                 
                 if (!book.getStatus().equals("Khả dụng")){
                     String str =  book.getStatus();
-                    NofiDialog nd = new NofiDialog("Sách "+str);
+                    NofiDialog nd = new NofiDialog("Sách " + str);
                 }
                 else{
                 try {
@@ -235,7 +286,6 @@ public class BorrowTicketForm extends javax.swing.JPanel {
                 }
                 }
             }
-
         }
     }//GEN-LAST:event_myButton1ActionPerformed
 
@@ -243,19 +293,84 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         this.ctf.dispose();
     }//GEN-LAST:event_myButton2ActionPerformed
 
+    private void tf_iduserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_iduserFocusLost
+       usermenu.setVisible(false);
+    }//GEN-LAST:event_tf_iduserFocusLost
+
+    private void tf_iduserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_iduserKeyReleased
+        usermenu.setLocation(tf_iduser.getLocationOnScreen().x, tf_iduser.getLocationOnScreen().y+48);
+        usermenu.setVisible(true);
+        try{
+            Class.forName(MySQLConstand.CLASS_NAME);
+            Connection conn = getJDBCConnection();
+            Statement st  = conn.createStatement();
+            
+            String search = tf_iduser.getText().trim();
+            String tmpData[] = new String[3];
+            String sql = "select * from user";
+            sql = sql + " where idUser like '%"+search+"%' or name like '%"+search+"%'";
+            
+            ResultSet rs = st.executeQuery(sql);
+            int i=0;
+            while(rs.next()){
+                String id = String.valueOf(rs.getInt("idUser"));
+                String name = rs.getString("name");
+                String phone = rs.getString("phonenumber");
+                String tmp = id + " - " + name + " - " + phone;
+                tmpData[i] = tmp;
+                i++;
+                if(i==3) break;
+            }
+            user1.setText(tmpData[0]);
+            user2.setText(tmpData[1]);
+            user3.setText(tmpData[2]);
+            
+            conn.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_tf_iduserKeyReleased
+    
+    public String getID(String tmp){
+        String[] tmp1 = tmp.split(" - ");
+        return tmp1[0];
+    }
+    
+    private void user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user1ActionPerformed
+        usermenu.setVisible(false);
+        tf_iduser.setText(getID(user1.getText()));
+    }//GEN-LAST:event_user1ActionPerformed
+
+    private void user2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user2ActionPerformed
+        usermenu.setVisible(false);
+        tf_iduser.setText(getID(user2.getText()));
+    }//GEN-LAST:event_user2ActionPerformed
+
+    private void user3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user3ActionPerformed
+        usermenu.setVisible(false);
+        tf_iduser.setText(getID(user3.getText()));
+    }//GEN-LAST:event_user3ActionPerformed
+
+    private void tf_idbookKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_idbookKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_idbookKeyPressed
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPopupMenu bookmenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private view.other.MyButton myButton1;
     private view.other.MyButton myButton2;
     private javax.swing.JTextField tf_idbook;
     private javax.swing.JTextField tf_iduser;
+    private javax.swing.JMenuItem user1;
+    private javax.swing.JMenuItem user2;
+    private javax.swing.JMenuItem user3;
+    private javax.swing.JPopupMenu usermenu;
     // End of variables declaration//GEN-END:variables
 }

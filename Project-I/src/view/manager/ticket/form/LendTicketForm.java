@@ -157,7 +157,7 @@ public class LendTicketForm extends javax.swing.JPanel {
         if (ticket == null) {
             NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin phiếu mượn");
         } else {
-            if (TicketController.getLendTicketByIdBorrow(ticket.getId()).getStatus().equals("Đã xử lý")) {
+            if (TicketController.getLendTicketByIdBorrow(ticket.getId()).getStatus().equals("đã xử lý")) {
                 NofiDialog nd = new NofiDialog("Phiếu trả đã được xử lý");
 
             } else {
@@ -176,7 +176,7 @@ public class LendTicketForm extends javax.swing.JPanel {
     }//GEN-LAST:event_myButton1ActionPerformed
 
     private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed
-        // this.etf.dispose();
+         this.ctf.dispose();
     }//GEN-LAST:event_myButton2ActionPerformed
 
 

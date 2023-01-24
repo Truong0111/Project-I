@@ -13,7 +13,6 @@ import view.other.ClockThread;
 import view.manager.book.BookManagerForm;
 import view.manager.finance.FinanceManagerForm;
 import view.manager.ticket.TicketManagerForm;
-import view.other.InfoFrame;
 import view.other.MyButton;
 
 /**
@@ -49,21 +48,18 @@ public class ManagerFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popmenu = new javax.swing.JPopupMenu();
+        logout = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lb_hello = new javax.swing.JLabel();
-        btn_logout = new view.other.MyButton();
-        jPanel6 = new javax.swing.JPanel();
-        btn_usermanager = new view.other.MyButton();
-        jPanel10 = new javax.swing.JPanel();
-        btn_bookmanager = new view.other.MyButton();
-        jPanel11 = new javax.swing.JPanel();
-        btn_ticketmanager = new view.other.MyButton();
-        jPanel12 = new javax.swing.JPanel();
-        btn_financemanager = new view.other.MyButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        btn_financemanager = new view.other.MyButton();
+        btn_ticketmanager = new view.other.MyButton();
+        btn_bookmanager = new view.other.MyButton();
+        btn_usermanager = new view.other.MyButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -73,16 +69,24 @@ public class ManagerFrame extends javax.swing.JFrame {
         pn_main = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
+        popmenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        popmenu.setPreferredSize(new java.awt.Dimension(200, 50));
+
+        logout.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        logout.setText("Đăng xuất");
+        logout.setPreferredSize(new java.awt.Dimension(117, 28));
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        popmenu.add(logout);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(49, 127, 129));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel1MousePressed(evt);
-            }
-        });
 
         jPanel2.setBackground(new java.awt.Color(49, 127, 129));
 
@@ -92,19 +96,11 @@ public class ManagerFrame extends javax.swing.JFrame {
         lb_hello.setForeground(new java.awt.Color(255, 255, 255));
         lb_hello.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_hello.setText("hello");
+        lb_hello.setComponentPopupMenu(popmenu);
         lb_hello.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_hello.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_helloMouseClicked(evt);
-            }
-        });
-
-        btn_logout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btn_logout.setText("Đăng xuất");
-        btn_logout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_logoutActionPerformed(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_helloMousePressed(evt);
             }
         });
 
@@ -112,91 +108,42 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lb_hello, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lb_hello, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lb_hello, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btn_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addComponent(lb_hello, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(49, 127, 129));
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
-        btn_usermanager.setBackground(new java.awt.Color(49, 127, 129));
-        btn_usermanager.setBorder(null);
-        btn_usermanager.setForeground(new java.awt.Color(255, 255, 255));
-        btn_usermanager.setText(" Quản lý người dùng ");
-        btn_usermanager.setBorderColor(new java.awt.Color(49, 127, 129));
-        btn_usermanager.setBorderPainted(false);
-        btn_usermanager.setColor(new java.awt.Color(49, 127, 129));
-        btn_usermanager.setColorClick(new java.awt.Color(63, 163, 166));
-        btn_usermanager.setColorOver(new java.awt.Color(0, 102, 102));
-        btn_usermanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        btn_usermanager.setMargin(new java.awt.Insets(3, 14, 3, 14));
-        btn_usermanager.setRadius(20);
-        btn_usermanager.addActionListener(new java.awt.event.ActionListener() {
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        btn_financemanager.setBackground(new java.awt.Color(49, 127, 129));
+        btn_financemanager.setBorder(null);
+        btn_financemanager.setForeground(new java.awt.Color(255, 255, 255));
+        btn_financemanager.setText("Quản lý tài chính");
+        btn_financemanager.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_financemanager.setBorderPainted(false);
+        btn_financemanager.setColor(new java.awt.Color(49, 127, 129));
+        btn_financemanager.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_financemanager.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_financemanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_financemanager.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_financemanager.setRadius(20);
+        btn_financemanager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_usermanagerActionPerformed(evt);
+                btn_financemanagerActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_usermanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_usermanager, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        jPanel10.setBackground(new java.awt.Color(49, 127, 129));
-
-        btn_bookmanager.setBackground(new java.awt.Color(49, 127, 129));
-        btn_bookmanager.setBorder(null);
-        btn_bookmanager.setForeground(new java.awt.Color(255, 255, 255));
-        btn_bookmanager.setText("Quản lý sách");
-        btn_bookmanager.setToolTipText("");
-        btn_bookmanager.setBorderColor(new java.awt.Color(49, 127, 129));
-        btn_bookmanager.setBorderPainted(false);
-        btn_bookmanager.setColor(new java.awt.Color(49, 127, 129));
-        btn_bookmanager.setColorClick(new java.awt.Color(63, 163, 166));
-        btn_bookmanager.setColorOver(new java.awt.Color(0, 102, 102));
-        btn_bookmanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        btn_bookmanager.setMargin(new java.awt.Insets(3, 14, 3, 14));
-        btn_bookmanager.setRadius(20);
-        btn_bookmanager.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_bookmanagerActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_bookmanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_bookmanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        jPanel11.setBackground(new java.awt.Color(49, 127, 129));
 
         btn_ticketmanager.setBackground(new java.awt.Color(49, 127, 129));
         btn_ticketmanager.setBorder(null);
@@ -217,88 +164,71 @@ public class ManagerFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_ticketmanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_ticketmanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        jPanel12.setBackground(new java.awt.Color(49, 127, 129));
-
-        btn_financemanager.setBackground(new java.awt.Color(49, 127, 129));
-        btn_financemanager.setBorder(null);
-        btn_financemanager.setForeground(new java.awt.Color(255, 255, 255));
-        btn_financemanager.setText("Quản lý tài chính");
-        btn_financemanager.setBorderColor(new java.awt.Color(49, 127, 129));
-        btn_financemanager.setBorderPainted(false);
-        btn_financemanager.setColor(new java.awt.Color(49, 127, 129));
-        btn_financemanager.setColorClick(new java.awt.Color(63, 163, 166));
-        btn_financemanager.setColorOver(new java.awt.Color(0, 102, 102));
-        btn_financemanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        btn_financemanager.setMargin(new java.awt.Insets(3, 14, 3, 14));
-        btn_financemanager.setRadius(20);
-        btn_financemanager.addActionListener(new java.awt.event.ActionListener() {
+        btn_bookmanager.setBackground(new java.awt.Color(49, 127, 129));
+        btn_bookmanager.setBorder(null);
+        btn_bookmanager.setForeground(new java.awt.Color(255, 255, 255));
+        btn_bookmanager.setText("Quản lý sách");
+        btn_bookmanager.setToolTipText("");
+        btn_bookmanager.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_bookmanager.setBorderPainted(false);
+        btn_bookmanager.setColor(new java.awt.Color(49, 127, 129));
+        btn_bookmanager.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_bookmanager.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_bookmanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_bookmanager.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_bookmanager.setRadius(20);
+        btn_bookmanager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_financemanagerActionPerformed(evt);
+                btn_bookmanagerActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_financemanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_financemanager, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-
-        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
-        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_usermanager.setBackground(new java.awt.Color(49, 127, 129));
+        btn_usermanager.setBorder(null);
+        btn_usermanager.setForeground(new java.awt.Color(255, 255, 255));
+        btn_usermanager.setText(" Quản lý người dùng ");
+        btn_usermanager.setBorderColor(new java.awt.Color(49, 127, 129));
+        btn_usermanager.setBorderPainted(false);
+        btn_usermanager.setColor(new java.awt.Color(49, 127, 129));
+        btn_usermanager.setColorClick(new java.awt.Color(63, 163, 166));
+        btn_usermanager.setColorOver(new java.awt.Color(0, 102, 102));
+        btn_usermanager.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_usermanager.setMargin(new java.awt.Insets(3, 14, 3, 14));
+        btn_usermanager.setRadius(20);
+        btn_usermanager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_usermanagerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addComponent(jSeparator2)))
+                    .addComponent(jSeparator2)
+                    .addComponent(btn_financemanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_ticketmanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_bookmanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_usermanager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(btn_usermanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_bookmanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_ticketmanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_financemanager, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addGap(334, 334, 334)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -352,9 +282,9 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(lb_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lb_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1057, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -443,74 +373,54 @@ public class ManagerFrame extends javax.swing.JFrame {
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x - xMouse - 260, y - yMouse);
+        this.setLocation(x - xMouse - 261, y - yMouse);
     }//GEN-LAST:event_jLabel1MouseDragged
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         xMouse = evt.getX();
         yMouse = evt.getY();
-        DisInfoFrame();
     }//GEN-LAST:event_jLabel1MousePressed
-
-    private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
-        this.dispose();
-        LoginFrame lf = new LoginFrame();
-        DisInfoFrame();
-    }//GEN-LAST:event_btn_logoutActionPerformed
-
-    int click = 0;
-    private InfoFrame inf;
-    public void ShowInfoFrame(){
-        inf = new InfoFrame(user, lb_hello.getLocationOnScreen().x, lb_hello.getLocationOnScreen().y-305);
-        click = 1;
-    }
-    public void DisInfoFrame(){
-        if(click == 1){
-            inf.dispose();
-            click = 0;
-        }
-    }
-    
-    private void lb_helloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_helloMouseClicked
-        if(click == 0)ShowInfoFrame();
-        else DisInfoFrame();
-    }//GEN-LAST:event_lb_helloMouseClicked
-
-    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        DisInfoFrame();
-    }//GEN-LAST:event_jPanel1MousePressed
 
     private void btn_usermanagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usermanagerActionPerformed
         pn_main.removeAll();
         UserManagerForm umf = new UserManagerForm();
         pn_main.add(umf);
-        DisInfoFrame();
         isSelect(btn_usermanager);
+        pack();
     }//GEN-LAST:event_btn_usermanagerActionPerformed
 
     private void btn_bookmanagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bookmanagerActionPerformed
         pn_main.removeAll();
         BookManagerForm bmf = new BookManagerForm();
         pn_main.add(bmf);
-        DisInfoFrame();
         isSelect(btn_bookmanager);
+        pack();
     }//GEN-LAST:event_btn_bookmanagerActionPerformed
 
     private void btn_ticketmanagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ticketmanagerActionPerformed
         pn_main.removeAll();
         TicketManagerForm tmf = new TicketManagerForm();
         pn_main.add(tmf);
-        DisInfoFrame();
         isSelect(btn_ticketmanager);
+        pack();
     }//GEN-LAST:event_btn_ticketmanagerActionPerformed
 
     private void btn_financemanagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_financemanagerActionPerformed
         pn_main.removeAll();
         FinanceManagerForm fmf = new FinanceManagerForm();
         pn_main.add(fmf);
-        DisInfoFrame();
         isSelect(btn_financemanager);
+        pack();
     }//GEN-LAST:event_btn_financemanagerActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        this.dispose();
+        LoginFrame lf = new LoginFrame();
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void lb_helloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_helloMousePressed
+        popmenu.show(lb_hello, 50, -50);
+    }//GEN-LAST:event_lb_helloMousePressed
     
     public void isSelect(MyButton btn){
         btn_usermanager.setColor(new Color(49,127,129));
@@ -550,6 +460,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ManagerFrame().setVisible(true);
+                
             }
         });
     }
@@ -557,7 +468,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.other.MyButton btn_bookmanager;
     private view.other.MyButton btn_financemanager;
-    private view.other.MyButton btn_logout;
     private view.other.MyButton btn_ticketmanager;
     private view.other.MyButton btn_usermanager;
     private javax.swing.JLabel jLabel1;
@@ -565,18 +475,16 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lb_clock;
     private javax.swing.JLabel lb_hello;
+    private javax.swing.JMenuItem logout;
     private javax.swing.JPanel pn_main;
+    private javax.swing.JPopupMenu popmenu;
     // End of variables declaration//GEN-END:variables
 }

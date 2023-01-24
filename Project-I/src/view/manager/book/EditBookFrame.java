@@ -48,6 +48,7 @@ public class EditBookFrame extends javax.swing.JFrame {
         tf_room.setText(book.getLocation().getRoom());
         tf_shelf.setText(book.getLocation().getShelf());
         tf_row.setText(String.valueOf(book.getLocation().getRow()));
+        setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.

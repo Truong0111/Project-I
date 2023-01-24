@@ -6,12 +6,10 @@ package view.manager.user;
 
 import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
-import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import model.user.Account;
 import model.user.User;
@@ -34,14 +32,6 @@ public class UserManagerForm extends javax.swing.JPanel {
         jPanel9.setVisible(false);
     }
     
-    public UserManagerForm(User user){
-        this.user = user;
-        initComponents();
-        tb_user.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
-        tb_user.getTableHeader().setOpaque(false);
-        tb_user.getTableHeader().setBackground(new Color(32,136,203));
-        tb_user.getTableHeader().setForeground(new Color(255,255,255));
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
