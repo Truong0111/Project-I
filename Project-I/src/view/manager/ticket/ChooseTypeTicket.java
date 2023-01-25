@@ -29,6 +29,7 @@ public class ChooseTypeTicket extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.ticket = ticket;
+        setTitle("Tạo phiếu mới");
         lb_title.setText("Bạn đang chọn phiếu có ID:" + ticket.getId());
         setVisible(true);
     }
@@ -50,6 +51,8 @@ public class ChooseTypeTicket extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
 
         lb_title.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lb_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

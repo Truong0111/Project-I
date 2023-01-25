@@ -81,7 +81,6 @@ public class UserFrame extends javax.swing.JFrame {
         popmenu.add(logout);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1430, 794));
 

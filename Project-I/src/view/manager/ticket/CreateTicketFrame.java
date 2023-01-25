@@ -29,7 +29,7 @@ public class CreateTicketFrame extends javax.swing.JFrame {
     
     public CreateTicketFrame(Ticket ticket){
         initComponents();
-        setLocationRelativeTo(null);
+        setTitle("Tạo phiếu");
         if(ticket instanceof BorrowTicket){
             BorrowTicketForm btf = new BorrowTicketForm((BorrowTicket) ticket,this);
             pn_main.add(btf);
@@ -50,6 +50,7 @@ public class CreateTicketFrame extends javax.swing.JFrame {
             pn_main.add(brtf);
             jLabel6.setText("Tạo phiếu đăng kí sách");
         }
+        setLocationRelativeTo(null);
         setVisible(true);
         this.pack();
     }
@@ -69,6 +70,10 @@ public class CreateTicketFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+
+        jPanel6.setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel10.setBackground(new java.awt.Color(245, 245, 245));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

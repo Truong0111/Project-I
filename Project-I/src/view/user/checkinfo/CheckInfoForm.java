@@ -77,7 +77,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_password.setEditable(false);
         tf_password.setBackground(new java.awt.Color(245, 245, 245));
-        tf_password.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_password.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_password.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_password.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -108,7 +108,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_name.setEditable(false);
         tf_name.setBackground(new java.awt.Color(245, 245, 245));
-        tf_name.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_name.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_name.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -139,7 +139,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_idcard.setEditable(false);
         tf_idcard.setBackground(new java.awt.Color(245, 245, 245));
-        tf_idcard.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_idcard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_idcard.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_idcard.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_idcard.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -170,7 +170,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_username.setEditable(false);
         tf_username.setBackground(new java.awt.Color(245, 245, 245));
-        tf_username.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_username.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_username.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -204,7 +204,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_phone.setEditable(false);
         tf_phone.setBackground(new java.awt.Color(245, 245, 245));
-        tf_phone.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_phone.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_phone.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_phone.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_phone.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -235,7 +235,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_mail.setEditable(false);
         tf_mail.setBackground(new java.awt.Color(245, 245, 245));
-        tf_mail.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_mail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_mail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_mail.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_mail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -266,7 +266,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
 
         tf_yearbd.setEditable(false);
         tf_yearbd.setBackground(new java.awt.Color(245, 245, 245));
-        tf_yearbd.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_yearbd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_yearbd.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_yearbd.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_yearbd.setDisabledTextColor(new java.awt.Color(0, 0, 0));

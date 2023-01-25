@@ -384,7 +384,10 @@ public class BookManagerForm extends javax.swing.JPanel {
         Book borrowbook = new Book();
         borrowbook = SelectBook(borrowbook);
         if(borrowbook != null){
-            if(borrowbook.getStatus().equals("Khả dụng")){
+            if(borrowbook.getStatus().equals("Đang mượn")){
+                NofiDialog nd = new NofiDialog("Sách đang được cho mượn hoặc không khả dụng");
+            }
+            else if(borrowbook.getStatus().equals("Khả dụng")){
                 BorrowTicket bt = new BorrowTicket();
                 bt.setBook(borrowbook);
                 CreateTicketFrame ctf = new CreateTicketFrame(bt);

@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Project-I/Project-I/src/view/manager/ManagerFrame.java</file>
+            <file>file:/E:/Project-I/Project-I/src/view/manager/ticket/form/BorrowTicketForm.java</file>
+            <file>file:/E:/Project-I/Project-I/src/view/manager/ticket/form/ExtendTicketForm.java</file>
+            <file>file:/E:/Project-I/Project-I/src/view/manager/book/AddBookFrame.java</file>
             <file>file:/E:/Project-I/Project-I/src/view/login/frame/LoginFrame.java</file>
-            <file>file:/E:/Project-I/Project-I/src/view/user/UserFrame.java</file>
-            <file>file:/E:/Project-I/Project-I/src/view/user/search/SearchBookForm.java</file>
-            <file>file:/E:/Project-I/Project-I/src/view/user/checkinfo/CheckInfoForm.java</file>
+            <file>file:/E:/Project-I/Project-I/src/controller/Decode.java</file>
+            <file>file:/E:/Project-I/Project-I/src/view/manager/ticket/form/LendTicketForm.java</file>
         </group>
     </open-files>
 </project-private>

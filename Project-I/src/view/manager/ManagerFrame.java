@@ -83,7 +83,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         popmenu.add(logout);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(49, 127, 129));

@@ -9,10 +9,12 @@ import constand.MySQLConstand;
 import controller.AccountController;
 import controller.BookController;
 import controller.TicketController;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Date;
+import javax.swing.BorderFactory;
 import model.book.Book;
 import model.ticket.BorrowTicket;
 import model.user.User;
@@ -61,17 +63,20 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         user2 = new javax.swing.JMenuItem();
         user3 = new javax.swing.JMenuItem();
         bookmenu = new javax.swing.JPopupMenu();
+        book1 = new javax.swing.JMenuItem();
+        book2 = new javax.swing.JMenuItem();
+        book3 = new javax.swing.JMenuItem();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         tf_idbook = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         tf_iduser = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         myButton2 = new view.other.MyButton();
         myButton1 = new view.other.MyButton();
 
+        usermenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         usermenu.setPreferredSize(new java.awt.Dimension(320, 150));
 
         user1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -107,15 +112,68 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         });
         usermenu.add(user3);
 
+        bookmenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bookmenu.setPreferredSize(new java.awt.Dimension(320, 150));
+
+        book1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        book1.setText("book1");
+        book1.setPreferredSize(new java.awt.Dimension(320, 30));
+        book1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book1ActionPerformed(evt);
+            }
+        });
+        bookmenu.add(book1);
+
+        book2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        book2.setText("jMenuItem2");
+        book2.setPreferredSize(new java.awt.Dimension(320, 30));
+        book2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book2ActionPerformed(evt);
+            }
+        });
+        bookmenu.add(book2);
+
+        book3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        book3.setText("jMenuItem3");
+        book3.setPreferredSize(new java.awt.Dimension(320, 30));
+        book3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book3ActionPerformed(evt);
+            }
+        });
+        bookmenu.add(book3);
+
+        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel3MousePressed(evt);
+            }
+        });
+
+        jPanel8.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel8MousePressed(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("ID Sách");
 
+        tf_idbook.setBackground(new java.awt.Color(245, 245, 245));
         tf_idbook.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_idbook.setComponentPopupMenu(bookmenu);
+        tf_idbook.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+        tf_idbook.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tf_idbookFocusLost(evt);
+            }
+        });
         tf_idbook.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tf_idbookKeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tf_idbookKeyReleased(evt);
             }
         });
 
@@ -124,11 +182,11 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tf_idbook, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,11 +197,16 @@ public class BorrowTicketForm extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel1.setText("ID người mượn");
+        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel9MousePressed(evt);
+            }
+        });
 
+        tf_iduser.setBackground(new java.awt.Color(245, 245, 245));
         tf_iduser.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_iduser.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_iduser.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 tf_iduserFocusLost(evt);
@@ -155,37 +218,25 @@ public class BorrowTicketForm extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(tf_iduser, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_iduser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel1.setText("ID người mượn");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(tf_iduser, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(173, 173, 173))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(tf_iduser, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         myButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -216,19 +267,15 @@ public class BorrowTicketForm extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(49, 49, 49)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -249,7 +296,7 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -308,7 +355,7 @@ public class BorrowTicketForm extends javax.swing.JPanel {
             String search = tf_iduser.getText().trim();
             String tmpData[] = new String[3];
             String sql = "select * from user";
-            sql = sql + " where idUser like '%"+search+"%' or name like '%"+search+"%'";
+            sql = sql + " where idUser like '%"+search+"%' or name like '%"+search+"%' or phonenumber like '%"+search+"%'";
             
             ResultSet rs = st.executeQuery(sql);
             int i=0;
@@ -351,17 +398,83 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         tf_iduser.setText(getID(user3.getText()));
     }//GEN-LAST:event_user3ActionPerformed
 
-    private void tf_idbookKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_idbookKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_idbookKeyPressed
+    private void jPanel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MousePressed
+        usermenu.setVisible(false);
+        bookmenu.setVisible(false);
+    }//GEN-LAST:event_jPanel8MousePressed
+
+    private void jPanel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MousePressed
+        usermenu.setVisible(false);
+        bookmenu.setVisible(false);
+    }//GEN-LAST:event_jPanel9MousePressed
+
+    private void jPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MousePressed
+        usermenu.setVisible(false);
+        bookmenu.setVisible(false);
+    }//GEN-LAST:event_jPanel3MousePressed
+
+    private void book1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book1ActionPerformed
+        bookmenu.setVisible(false);
+        tf_idbook.setText(getID(book1.getText()));
+    }//GEN-LAST:event_book1ActionPerformed
+
+    private void book2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book2ActionPerformed
+        bookmenu.setVisible(false);
+        tf_idbook.setText(getID(book2.getText()));
+    }//GEN-LAST:event_book2ActionPerformed
+
+    private void book3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book3ActionPerformed
+        bookmenu.setVisible(false);
+        tf_idbook.setText(getID(book3.getText()));
+    }//GEN-LAST:event_book3ActionPerformed
+
+    private void tf_idbookFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_idbookFocusLost
+        bookmenu.setVisible(false);
+    }//GEN-LAST:event_tf_idbookFocusLost
+
+    private void tf_idbookKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_idbookKeyReleased
+        bookmenu.setLocation(tf_idbook.getLocationOnScreen().x, tf_idbook.getLocationOnScreen().y+48);
+        bookmenu.setVisible(true);
+        try{
+            Class.forName(MySQLConstand.CLASS_NAME);
+            Connection conn = getJDBCConnection();
+            Statement st  = conn.createStatement();
+            
+            String search = tf_idbook.getText().trim();
+            String tmpData[] = new String[3];
+            String sql = "select * from book";
+            sql = sql + " where idBook like '%"+search+"%' or name like '%"+search+"%' or author like '%"+search+"%'";
+            
+            ResultSet rs = st.executeQuery(sql);
+            int i=0;
+            while(rs.next()){
+                String id = String.valueOf(rs.getInt("idBook"));
+                String name = rs.getString("name");
+                String author = rs.getString("author");
+                String tmp = id + " - " + name + " - " + author;
+                tmpData[i] = tmp;
+                i++;
+                if(i==3) break;
+            }
+            book1.setText(tmpData[0]);
+            book2.setText(tmpData[1]);
+            book3.setText(tmpData[2]);
+            
+            conn.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_tf_idbookKeyReleased
         
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem book1;
+    private javax.swing.JMenuItem book2;
+    private javax.swing.JMenuItem book3;
     private javax.swing.JPopupMenu bookmenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private view.other.MyButton myButton1;

@@ -4,6 +4,8 @@
  */
 package view.manager.book;
 import controller.BookController;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import model.book.Book;
 import model.book.Location;
 import view.other.NofiDialog;
@@ -13,7 +15,7 @@ import view.other.NofiDialog;
  */
 public class AddBookFrame extends javax.swing.JFrame {
     private Book book;
-    private BookController bookController= new BookController();
+    private BookController bookController;
     
     /**
      * Creates new form EditBookFrame
@@ -27,6 +29,7 @@ public class AddBookFrame extends javax.swing.JFrame {
         this.book = book;
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Thêm sách " + book.getName());
         tf_bookname.setText(book.getName());
         tf_code.setText(book.getCode());
         tf_author.setText(book.getAuthor());
@@ -62,7 +65,6 @@ public class AddBookFrame extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -95,21 +97,29 @@ public class AddBookFrame extends javax.swing.JFrame {
         tf_shelf = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         tf_row = new javax.swing.JTextField();
+        myButton2 = new view.other.MyButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jPanel6.setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel5.setBackground(new java.awt.Color(245, 245, 245));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel1.setText("Code");
 
+        tf_code.setEditable(false);
+        tf_code.setBackground(new java.awt.Color(245, 245, 245));
         tf_code.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_code.setEnabled(false);
+        tf_code.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -131,12 +141,16 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel7.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Tác giả");
 
+        tf_author.setEditable(false);
+        tf_author.setBackground(new java.awt.Color(245, 245, 245));
         tf_author.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_author.setEnabled(false);
+        tf_author.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -158,12 +172,16 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel8.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("Thể loại");
 
+        tf_category.setEditable(false);
+        tf_category.setBackground(new java.awt.Color(245, 245, 245));
         tf_category.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_category.setEnabled(false);
+        tf_category.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -185,12 +203,16 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setText("Tên");
 
+        tf_bookname.setEditable(false);
+        tf_bookname.setBackground(new java.awt.Color(245, 245, 245));
         tf_bookname.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_bookname.setEnabled(false);
+        tf_bookname.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -212,12 +234,16 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel11.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel7.setText("Nhà xuất bản");
 
+        tf_publisher.setEditable(false);
+        tf_publisher.setBackground(new java.awt.Color(245, 245, 245));
         tf_publisher.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_publisher.setEnabled(false);
+        tf_publisher.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -239,6 +265,8 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel14.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel10.setText("Trạng thái");
@@ -256,11 +284,11 @@ public class AddBookFrame extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(45, 45, 45)
                 .addComponent(khadungjRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134)
+                .addGap(76, 76, 76)
                 .addComponent(kotontaijRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,12 +300,16 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel15.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel11.setText("Năm xuất bản");
 
+        tf_year.setEditable(false);
+        tf_year.setBackground(new java.awt.Color(245, 245, 245));
         tf_year.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tf_year.setEnabled(false);
+        tf_year.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -308,6 +340,8 @@ public class AddBookFrame extends javax.swing.JFrame {
             }
         });
 
+        jPanel16.setBackground(new java.awt.Color(245, 245, 245));
+
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel12.setText("Vị trí");
@@ -316,13 +350,25 @@ public class AddBookFrame extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Phòng");
 
+        tf_room.setBackground(new java.awt.Color(245, 245, 245));
+        tf_room.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_room.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Tủ");
 
+        tf_shelf.setBackground(new java.awt.Color(245, 245, 245));
+        tf_shelf.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_shelf.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Hàng");
+
+        tf_row.setBackground(new java.awt.Color(245, 245, 245));
+        tf_row.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tf_row.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -351,13 +397,26 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(tf_room, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_shelf, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_row, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_row)
+                    .addComponent(tf_shelf)
+                    .addComponent(tf_room))
+                .addContainerGap())
         );
+
+        myButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        myButton2.setText("Hủy");
+        myButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        myButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -377,6 +436,8 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
@@ -400,23 +461,32 @@ public class AddBookFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
-
-        jScrollPane1.setViewportView(jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
+        jPanel10.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel6.setBackground(new java.awt.Color(245, 245, 245));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("THÊM SÁCH");
@@ -493,6 +563,10 @@ public class AddBookFrame extends javax.swing.JFrame {
         }          
     }//GEN-LAST:event_myButton1ActionPerformed
 
+    private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_myButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -557,10 +631,10 @@ public class AddBookFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton khadungjRadioButton1;
     private javax.swing.JRadioButton kotontaijRadioButton3;
     private view.other.MyButton myButton1;
+    private view.other.MyButton myButton2;
     private javax.swing.JTextField tf_author;
     private javax.swing.JTextField tf_bookname;
     private javax.swing.JTextField tf_category;
