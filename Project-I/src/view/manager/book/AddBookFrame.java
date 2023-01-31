@@ -15,6 +15,7 @@ import view.other.NofiDialog;
  */
 public class AddBookFrame extends javax.swing.JFrame {
     private Book book;
+    private BookManagerForm bmf;
     private BookController bookController;
     
     /**
@@ -25,8 +26,9 @@ public class AddBookFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
-    public AddBookFrame(Book book) {
+    public AddBookFrame(Book book, BookManagerForm bmf) {
         this.book = book;
+        this.bmf = bmf;
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Thêm sách " + book.getName());
@@ -560,6 +562,8 @@ public class AddBookFrame extends javax.swing.JFrame {
            Location  location= new Location(room, shelf, Integer.parseInt(row));
            Book newBook = new Book(book.getId(), name, code, author, category, Short.valueOf(year), publiser, status, location);
            bookController.addBook(name, code, author, category, Short.valueOf(year), publiser, status, location);
+           NofiDialog nd = new NofiDialog("Thêm sách mới thành công");
+           this.bmf.Search();
         }          
     }//GEN-LAST:event_myButton1ActionPerformed
 

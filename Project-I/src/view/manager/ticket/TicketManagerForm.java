@@ -22,6 +22,7 @@ import model.ticket.LendTicket;
 import model.ticket.PenaltyTicket;
 import model.ticket.Ticket;
 import model.user.User;
+import view.other.NofiDialog;
 
 /**
  *
@@ -320,14 +321,17 @@ public class TicketManagerForm extends javax.swing.JPanel {
 
     private void checkticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkticketActionPerformed
         Ticket checkticket = SelectTicket();
-        if(checkticket != null){
+        if(checkticket == null){
+            NofiDialog nd = new NofiDialog("Vui lòng chọn phiếu để kiểm tra");
+        }
+        else{
             if (checkticket instanceof BorrowTicket){
-                CheckBorrowTicketFrame ctf = new CheckBorrowTicketFrame((BorrowTicket)ticketController.getTicketById(checkticket.getId()));
+                CheckBorrowTicketFrame ctf = new CheckBorrowTicketFrame(TicketController.getBorrowTicketById(checkticket.getId()));
             }
-            if (checkticket instanceof  LendTicket){
+            else if (checkticket instanceof  LendTicket){
                 CheckLendTicketFrame ctf = new CheckLendTicketFrame(TicketController.getLendTicketById(checkticket.getId()));
             }
-            if (checkticket instanceof  ExtendTicket){
+            else if (checkticket instanceof  ExtendTicket){
                 CheckExtendTicketFrame ctf = new CheckExtendTicketFrame(TicketController.getExtendTicketByID(checkticket.getId()));
             }
         }

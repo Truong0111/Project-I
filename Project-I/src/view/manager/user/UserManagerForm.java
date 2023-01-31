@@ -319,7 +319,7 @@ public class UserManagerForm extends javax.swing.JPanel {
         User edituser = new User();
         edituser = SelectUser(edituser);
         if(edituser != null){
-            EditUserFrame euf = new EditUserFrame(edituser);
+            EditUserFrame euf = new EditUserFrame(edituser,this);
         }
     }//GEN-LAST:event_editMousePressed
 

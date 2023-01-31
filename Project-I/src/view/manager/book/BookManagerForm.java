@@ -368,7 +368,7 @@ public class BookManagerForm extends javax.swing.JPanel {
         Book editbook = new Book();
         editbook = SelectBook(editbook);
         if (editbook != null) {
-            EditBookFrame ebf = new EditBookFrame(editbook);
+            EditBookFrame ebf = new EditBookFrame(editbook,this);
         }
     }//GEN-LAST:event_editbookMousePressed
 
@@ -376,7 +376,7 @@ public class BookManagerForm extends javax.swing.JPanel {
         Book addBook = new Book();
         addBook = SelectBook(addBook);
         if (addBook != null) {
-            AddBookFrame abf  = new AddBookFrame(addBook);
+            AddBookFrame abf  = new AddBookFrame(addBook,this);
         }
     }//GEN-LAST:event_addbookMousePressed
 

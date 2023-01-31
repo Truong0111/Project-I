@@ -29,9 +29,9 @@ public class BorrowTicketForm extends javax.swing.JPanel {
 
     private BorrowTicket borrowticket;
     private CreateTicketFrame ctf;
-     TicketController ticketController = new TicketController();
-        AccountController accountController = new AccountController();
-        BookController bookController = new BookController();
+    TicketController ticketController = new TicketController();
+    AccountController accountController = new AccountController();
+    BookController bookController = new BookController();
 
     /**
      * Creates new form BorrowTicketEditForm

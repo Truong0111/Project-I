@@ -16,7 +16,7 @@ import view.other.NofiDialog;
  */
 public class CreateUserFrame extends javax.swing.JFrame {
     private UserManagerForm umf;
-    private AccountController accountController;
+    private AccountController accountController = new AccountController();
 
     /**
      * Creates new form CreateUserFrame
@@ -491,7 +491,7 @@ public class CreateUserFrame extends javax.swing.JFrame {
                 || phone.equals("") || userName.equals("") || yearbd.equals("") || role.equals("")) {
             NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin");
         } else {
-            if (!accountController.checkErrorCreateAccount(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role).isEmpty()) {
+            if (accountController.checkErrorCreateAccount(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role).isEmpty() == false) {
                 String errorString = "";
                 System.out.println("view.manager.frame.CreateUserFrame.myButton1ActionPerformed()");
                 for (String string : accountController.checkErrorCreateAccount(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role)) {
@@ -503,6 +503,7 @@ public class CreateUserFrame extends javax.swing.JFrame {
                 if (accountController.addUser(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role)) {
                     FinanceController financeController= new FinanceController();
                     financeController.addFinance(50000, "thu", "tạo tài khoản " + phone);
+                    NofiDialog nd = new NofiDialog("Tạo tài khoản thành công");
                     dispose();
                 } else {
                     NofiDialog nd = new NofiDialog("Nhập thông tin không hợp lệ");

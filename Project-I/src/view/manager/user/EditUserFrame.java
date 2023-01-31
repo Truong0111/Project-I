@@ -16,6 +16,7 @@ import view.other.NofiDialog;
  * @author Administrator
  */
 public class EditUserFrame extends javax.swing.JFrame {
+    private UserManagerForm umf;
     private User user;
     /**
      * Creates new form EditUserFrame
@@ -24,8 +25,9 @@ public class EditUserFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-    public EditUserFrame(User user) {
+    public EditUserFrame(User user,UserManagerForm umf) {
         this.user = user;
+        this.umf = umf;
         initComponents();
         setLocationRelativeTo(null);
         tf_username.setText(user.getAccount().getUsername());
@@ -403,11 +405,13 @@ public class EditUserFrame extends javax.swing.JFrame {
         Account accountAfterUpdate = new Account(mail, userName, "password", account.getIdAccount(), account.getRole());
         User userAfterUpdate= new User(name, yearbd, phone, idCard, accountAfterUpdate);
         if (accountController.updateUser(this.user.getAccount().getIdAccount(), userAfterUpdate)){
-        dispose();
+            NofiDialog nd = new NofiDialog("Chỉnh sửa thành công");
+            dispose();
         }
         else{
             NofiDialog nd = new NofiDialog("Chỉnh sửa không hợp lệ");
         }
+        this.umf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed
 
     private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed
