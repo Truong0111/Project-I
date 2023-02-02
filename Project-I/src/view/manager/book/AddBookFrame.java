@@ -16,7 +16,7 @@ import view.other.NofiDialog;
 public class AddBookFrame extends javax.swing.JFrame {
     private Book book;
     private BookManagerForm bmf;
-    private BookController bookController;
+    private BookController bookController = new BookController();
     
     /**
      * Creates new form EditBookFrame
@@ -564,7 +564,8 @@ public class AddBookFrame extends javax.swing.JFrame {
            bookController.addBook(name, code, author, category, Short.valueOf(year), publiser, status, location);
            NofiDialog nd = new NofiDialog("Thêm sách mới thành công");
            this.bmf.Search();
-        }          
+           this.dispose();
+        }
     }//GEN-LAST:event_myButton1ActionPerformed
 
     private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed

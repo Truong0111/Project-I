@@ -87,12 +87,12 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("Đăng nhập");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(340, 120, 118, 37);
+        jLabel2.setBounds(340, 120, 117, 37);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Tên đăng nhập");
         jPanel4.add(jLabel1);
-        jLabel1.setBounds(120, 190, 119, 50);
+        jLabel1.setBounds(120, 190, 140, 50);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Mật khẩu");

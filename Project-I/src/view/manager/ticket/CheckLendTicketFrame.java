@@ -263,6 +263,7 @@ public class CheckLendTicketFrame extends javax.swing.JFrame {
 
         tf_idborrow.setEditable(false);
         tf_idborrow.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idborrow.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idborrow.setBorder(compound);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);

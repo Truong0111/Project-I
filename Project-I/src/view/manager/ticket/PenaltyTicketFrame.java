@@ -55,22 +55,8 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
             dateLate = 0;
         }
         tf_dateLate.setText(String.valueOf(dateLate));
-         penaltyValue = 0;
-        if (dateLate >= 14) {
-            penaltyValue = 55000;
-        } else {
-            if (dateLate >= 7) {
-                penaltyValue = 25000;
-            } else {
-                if (dateLate >= 3) {
-                    penaltyValue = 10000;
-                } else {
-                    if (dateLate >0) {
-                        penaltyValue = 3000;
-                    }
-                }
-            }
-        }
+        penaltyValue = 3000 * dateLate;
+        
         tf_penalty.setText(String.valueOf(penaltyValue));
         System.out.println(dateLate);
         System.out.println(currentDate);
