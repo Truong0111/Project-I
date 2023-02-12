@@ -312,7 +312,7 @@ public class UserManagerForm extends javax.swing.JPanel {
     }
     
     private void btn_createuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createuserActionPerformed
-        CreateUserFrame cuf = new CreateUserFrame(this);
+        CreateUserFrame cuf = new CreateUserFrame(this,this.user);
     }//GEN-LAST:event_btn_createuserActionPerformed
 
     private void editMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMousePressed

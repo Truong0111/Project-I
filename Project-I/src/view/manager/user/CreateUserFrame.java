@@ -8,6 +8,7 @@ import controller.AccountController;
 import controller.FinanceController;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import model.user.User;
 import view.other.NofiDialog;
 
 /**
@@ -15,6 +16,7 @@ import view.other.NofiDialog;
  * @author Administrator
  */
 public class CreateUserFrame extends javax.swing.JFrame {
+    private User user;
     private UserManagerForm umf;
     private AccountController accountController = new AccountController();
 
@@ -27,11 +29,12 @@ public class CreateUserFrame extends javax.swing.JFrame {
         setVisible(true);
         
     }
-    public CreateUserFrame(UserManagerForm umf) {
+    public CreateUserFrame(UserManagerForm umf,User user) {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
         this.umf = umf;
+        this.user = user;
         setTitle("Tạo người dùng mới");
     }
 
@@ -484,16 +487,16 @@ public class CreateUserFrame extends javax.swing.JFrame {
             }
             
         }
-        if(role.equals("manager")){
-            NofiDialog nd = new NofiDialog("Không đủ quyền hạn tạo người quản lý");
-        }
-        else if (name.equals("") || password.equals("") || idCard.equals("") || mail.equals("")
+        if (name.equals("") || password.equals("") || idCard.equals("") || mail.equals("")
                 || phone.equals("") || userName.equals("") || yearbd.equals("") || role.equals("")) {
             NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin");
-        } else {
+        }
+        else if(role.equals("manager") && !user.getAccount().getRole().equals("admin")){
+            NofiDialog nd = new NofiDialog("Không đủ quyền hạn tạo người quản lý");
+        }
+        else {
             if (accountController.checkErrorCreateAccount(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role).isEmpty() == false) {
                 String errorString = "";
-                System.out.println("view.manager.frame.CreateUserFrame.myButton1ActionPerformed()");
                 for (String string : accountController.checkErrorCreateAccount(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role)) {
                     errorString = errorString + string + "  ";
                 }

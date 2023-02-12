@@ -56,7 +56,6 @@ public class UserFrame extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         btn_search = new view.other.MyButton();
         btn_userinfo = new view.other.MyButton();
-        btn_ticketinfo = new view.other.MyButton();
         btn_borrowinfo = new view.other.MyButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -157,24 +156,6 @@ public class UserFrame extends javax.swing.JFrame {
             }
         });
 
-        btn_ticketinfo.setBackground(new java.awt.Color(49, 127, 129));
-        btn_ticketinfo.setBorder(null);
-        btn_ticketinfo.setForeground(new java.awt.Color(255, 255, 255));
-        btn_ticketinfo.setText("Thông tin phiếu");
-        btn_ticketinfo.setBorderColor(new java.awt.Color(49, 127, 129));
-        btn_ticketinfo.setBorderPainted(false);
-        btn_ticketinfo.setColor(new java.awt.Color(49, 127, 129));
-        btn_ticketinfo.setColorClick(new java.awt.Color(63, 163, 166));
-        btn_ticketinfo.setColorOver(new java.awt.Color(0, 102, 102));
-        btn_ticketinfo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        btn_ticketinfo.setMargin(new java.awt.Insets(3, 14, 3, 14));
-        btn_ticketinfo.setRadius(20);
-        btn_ticketinfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ticketinfoActionPerformed(evt);
-            }
-        });
-
         btn_borrowinfo.setBackground(new java.awt.Color(49, 127, 129));
         btn_borrowinfo.setBorder(null);
         btn_borrowinfo.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,7 +185,6 @@ public class UserFrame extends javax.swing.JFrame {
                     .addComponent(jSeparator1)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_userinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_ticketinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_borrowinfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
                     .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -217,10 +197,8 @@ public class UserFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btn_borrowinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_ticketinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(btn_userinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 399, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 477, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -402,22 +380,16 @@ public class UserFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_userinfoActionPerformed
 
     private void btn_borrowinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowinfoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_borrowinfoActionPerformed
-
-    private void btn_ticketinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ticketinfoActionPerformed
-        // TODO add your handling code here:
-         pn_main.removeAll();
+        pn_main.removeAll();
         CheckTicket cif = new CheckTicket(user);
         pn_main.add(cif);
         isSelect(btn_borrowinfo);
         pack();
-    }//GEN-LAST:event_btn_ticketinfoActionPerformed
+    }//GEN-LAST:event_btn_borrowinfoActionPerformed
 
     public void isSelect(MyButton btn){
         btn_search.setColor(new Color(49,127,129));
         btn_borrowinfo.setColor(new Color(49,127,129));
-        btn_ticketinfo.setColor(new Color(49,127,129));
         btn_userinfo.setColor(new Color(49,127,129));
         btn.setColor(new Color(63,163,166));
     }
@@ -459,7 +431,6 @@ public class UserFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.other.MyButton btn_borrowinfo;
     private view.other.MyButton btn_search;
-    private view.other.MyButton btn_ticketinfo;
     private view.other.MyButton btn_userinfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

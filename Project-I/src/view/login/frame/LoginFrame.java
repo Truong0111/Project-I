@@ -87,7 +87,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("Đăng nhập");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(340, 120, 117, 37);
+        jLabel2.setBounds(340, 120, 230, 37);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Tên đăng nhập");
@@ -102,12 +102,14 @@ public class LoginFrame extends javax.swing.JFrame {
         tf_username.setBackground(new java.awt.Color(238, 230, 227));
         tf_username.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         tf_username.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+        tf_username.setSelectionColor(new java.awt.Color(3, 155, 216));
         jPanel4.add(tf_username);
         tf_username.setBounds(300, 190, 257, 50);
 
         tf_password.setBackground(new java.awt.Color(238, 230, 227));
         tf_password.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         tf_password.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+        tf_password.setSelectionColor(new java.awt.Color(3, 155, 216));
         tf_password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tf_passwordKeyPressed(evt);
@@ -116,7 +118,6 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel4.add(tf_password);
         tf_password.setBounds(300, 280, 257, 50);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ask.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.add(jLabel5);
         jLabel5.setBounds(120, 380, 40, 40);

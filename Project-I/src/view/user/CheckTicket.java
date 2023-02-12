@@ -9,6 +9,7 @@ import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
 import controller.TicketController;
 import database.DBTicket;
+import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,6 +17,7 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import model.book.Book;
 import model.ticket.BookRequestTicket;
@@ -37,7 +39,7 @@ public class CheckTicket extends javax.swing.JPanel {
      * Creates new form TicketManagerForm
      */
     private int count;
-    User user;
+    private User user;
     TicketController ticketController = new TicketController();
     public void setCountToZ(){
         this.count = 0;
@@ -53,6 +55,11 @@ public class CheckTicket extends javax.swing.JPanel {
         tb_ticket.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,16));
         tb_ticket.getTableHeader().setOpaque(false);
         jPanel9.setVisible(false);
+        
+        jcb_type.setOpaque(true);
+        jcb_type.setBorder(new EmptyBorder(0, 0,0,0));
+        jcb_type.setBackground(Color.WHITE);
+        
     }
 
     /**
@@ -117,13 +124,9 @@ public class CheckTicket extends javax.swing.JPanel {
         });
 
         jcb_type.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jcb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phiếu mượn", "Phiếu gia hạn", "Phiếu trả", "Phiếu phạt", " " }));
-        jcb_type.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jcb_type.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcb_typeActionPerformed(evt);
-            }
-        });
+        jcb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phiếu mượn", "Phiếu gia hạn", "Phiếu trả", "Phiếu phạt", "" }));
+        jcb_type.setBorder(null);
+        jcb_type.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jcb_status.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jcb_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Đã xử lý", "Chưa xử lý" }));
@@ -321,10 +324,6 @@ public class CheckTicket extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_checkticketActionPerformed
-
-    private void jcb_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_typeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcb_typeActionPerformed
     
     public void ClearDataTable() {
         DefaultTableModel tbmodel = (DefaultTableModel) tb_ticket.getModel();
