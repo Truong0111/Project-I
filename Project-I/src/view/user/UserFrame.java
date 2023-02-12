@@ -82,7 +82,6 @@ public class UserFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1430, 794));
 
         jPanel1.setBackground(new java.awt.Color(49, 127, 129));
 
@@ -401,23 +400,22 @@ public class UserFrame extends javax.swing.JFrame {
         pack();
     }//GEN-LAST:event_btn_userinfoActionPerformed
 
-    private void btn_borrowinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowinfoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_borrowinfoActionPerformed
-
     private void btn_ticketinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ticketinfoActionPerformed
         // TODO add your handling code here:
-         pn_main.removeAll();
+        pn_main.removeAll();
         CheckTicket cif = new CheckTicket(user);
         pn_main.add(cif);
         isSelect(btn_borrowinfo);
         pack();
     }//GEN-LAST:event_btn_ticketinfoActionPerformed
 
+    private void btn_borrowinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowinfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_borrowinfoActionPerformed
+
     public void isSelect(MyButton btn){
         btn_search.setColor(new Color(49,127,129));
         btn_borrowinfo.setColor(new Color(49,127,129));
-        btn_ticketinfo.setColor(new Color(49,127,129));
         btn_userinfo.setColor(new Color(49,127,129));
         btn.setColor(new Color(63,163,166));
     }

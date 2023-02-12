@@ -160,17 +160,17 @@ public class TicketController {
         lendTicket.setLendDate(new Date(lendTicket.getLendDate().getTime()+604800000L));
         this.updateLendTicket(lendTicket);
     }
-    public void addExtendTicket(int idticket){
+    public void addExtendTicket(int idBorrowticket){
         ExtendTicket ExtendTicket = new ExtendTicket();
         ExtendTicket.setId(TicketController.getCurrentIdTicket()+1);
         ExtendTicket.setStatus("Đã xử lý");
         ExtendTicket.setDateCreate(new Date());
         
-        BorrowTicket bT = TicketController.getBorrowTicketById(idticket);        
+        BorrowTicket bT = TicketController.getBorrowTicketById(idBorrowticket);        
         ExtendTicket.setBorrowTicket(bT);
         ExtendTicket.setNewReturnDate(new Date(bT.getReturnDate().getTime() + 604800000L));
         DBTicket.addExtendTicket(ExtendTicket);
-        LendTicket lendTicket = TicketController.getLendTicketByIdBorrow(idticket);
+        LendTicket lendTicket = TicketController.getLendTicketByIdBorrow(idBorrowticket);
         lendTicket.setLendDate(new Date(lendTicket.getLendDate().getTime() + 604800000L));
         DBTicket.updateLendTicket(lendTicket);
     }
