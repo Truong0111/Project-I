@@ -39,6 +39,7 @@ public class TicketController {
     }
 
     public TicketController() {
+        this.user = user;
     }
     
 

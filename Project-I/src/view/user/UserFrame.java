@@ -377,22 +377,13 @@ public class UserFrame extends javax.swing.JFrame {
         isSelect(btn_userinfo);
         pack();
     }//GEN-LAST:event_btn_userinfoActionPerformed
-
-<<<<<<< HEAD
+        
     private void btn_borrowinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowinfoActionPerformed
-=======
-    private void btn_ticketinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ticketinfoActionPerformed
-        // TODO add your handling code here:
->>>>>>> 0830ba8de89b593b051f140ecb39f1d5f670b526
         pn_main.removeAll();
         CheckTicket cif = new CheckTicket(user);
         pn_main.add(cif);
         isSelect(btn_borrowinfo);
         pack();
-    }//GEN-LAST:event_btn_borrowinfoActionPerformed
-
-    private void btn_borrowinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowinfoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btn_borrowinfoActionPerformed
 
     public void isSelect(MyButton btn){

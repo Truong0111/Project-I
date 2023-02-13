@@ -24,10 +24,10 @@ public class NofiDialog extends javax.swing.JFrame {
         // lb_errornofi.setText(text);
         String st[];
         st = text.split("\\.");
-        if(st.length == 2){
+        if(st.length == 1){
             jLabel2.setText(st[0].trim());
         }
-        else if(st.length == 3){
+        else if(st.length == 2){
             jLabel3.setText(st[0].trim());
             jLabel2.setText(st[1].trim());
         }

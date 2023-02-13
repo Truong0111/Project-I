@@ -322,7 +322,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
     private void checkticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkticketActionPerformed
         Ticket checkticket = SelectTicket();
         if(checkticket == null){
-            NofiDialog nd = new NofiDialog("Vui lòng chọn phiếu để kiểm tra");
+            NofiDialog nd = new NofiDialog("Vui lòng chọn phiếu để kiểm tra.");
         }
         else{
             if (checkticket instanceof BorrowTicket){

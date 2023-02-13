@@ -9,11 +9,13 @@ import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.BorderFactory;
+import javax.swing.JTextField;
 import model.user.Account;
 import model.user.User;
 import view.manager.ManagerFrame;
@@ -34,6 +36,8 @@ public class LoginFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Hệ thống quản lý sách thư viện");
         setVisible(true);
+        keyListenner(tf_username);
+        keyListenner(tf_password);
     }
     
 
@@ -110,11 +114,6 @@ public class LoginFrame extends javax.swing.JFrame {
         tf_password.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         tf_password.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_password.setSelectionColor(new java.awt.Color(3, 155, 216));
-        tf_password.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tf_passwordKeyPressed(evt);
-            }
-        });
         jPanel4.add(tf_password);
         tf_password.setBounds(300, 280, 257, 50);
 
@@ -177,42 +176,20 @@ public class LoginFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tf_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_passwordKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            try{
-            checkAccount();
-            Class.forName(MySQLConstand.CLASS_NAME);
-            Connection conn = getJDBCConnection();
-            Statement stm = conn.createStatement();
-
-            String idUser = String.valueOf(account.getIdAccount());
-            String role = account.getRole();
-
-            String sql = "select * from user where idUser='" + idUser + "'";
-            ResultSet rs = stm.executeQuery(sql);
-
-            if(rs.next()){
-                user.setAccount(account);
-                user.setName(rs.getString("name"));
-                user.setYearBirthday(Integer.parseInt(rs.getString("yearbirthday")));
-                user.setPhoneNumber(rs.getString("phonenumber"));
-                user.setIdCard(rs.getString("idcard"));
-                if (user.getAccount().getRole().equals("manager")) {
-                    new ManagerFrame(user).setVisible(true);
-                } else {
-                    new UserFrame(user).setVisible(true);
+    
+    private void keyListenner(JTextField jtf) {
+        jtf.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // neu keycode == 10 ~ enter
+                if (e.getKeyCode() == 10) {
+                    login();
                 }
-                dispose();
             }
-            conn.close();
-        } catch(Exception e){
-            System.out.println(e.getMessage());
-          }
-        }
-    }//GEN-LAST:event_tf_passwordKeyPressed
-
-    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
+        }); 
+    }
+    
+    private void login(){
         try{
             checkAccount();
             Class.forName(MySQLConstand.CLASS_NAME);
@@ -243,6 +220,10 @@ public class LoginFrame extends javax.swing.JFrame {
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
+    }
+    
+    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
+        login();
     }//GEN-LAST:event_myButton1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -277,7 +258,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 account.setPassword(password);
             }
             else{
-                NofiDialog nd = new NofiDialog("Sai tên đăng nhập hoặc mật khẩu");
+                NofiDialog nd = new NofiDialog("Sai tên đăng nhập hoặc mật khẩu.");
             }
             conn.close();
             

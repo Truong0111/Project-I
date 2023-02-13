@@ -288,11 +288,11 @@ public class ChangePassFrame extends javax.swing.JFrame {
             AccountController ac = new AccountController();
             ac.updatePassWord(this.user.getAccount().getIdAccount(), newpass);
             
-            NofiDialog nd = new NofiDialog("Đã đổi mật khẩu thành công");
+            NofiDialog nd = new NofiDialog("Đã đổi mật khẩu thành công.");
             dispose();
         }
         else{
-            NofiDialog nd = new NofiDialog("Vui lòng xác nhận đúng mật khẩu");
+            NofiDialog nd = new NofiDialog("Vui lòng xác nhận đúng mật khẩu.");
         }
     }//GEN-LAST:event_myButton1ActionPerformed
 

@@ -385,7 +385,7 @@ public class BookManagerForm extends javax.swing.JPanel {
         borrowbook = SelectBook(borrowbook);
         if(borrowbook != null){
             if(borrowbook.getStatus().equals("Đang mượn")){
-                NofiDialog nd = new NofiDialog("Sách đang được cho mượn hoặc không khả dụng");
+                NofiDialog nd = new NofiDialog("Sách đang được cho mượn hoặc không khả dụng.");
             }
             else if(borrowbook.getStatus().equals("Khả dụng")){
                 BorrowTicket bt = new BorrowTicket();
@@ -414,7 +414,7 @@ public class BookManagerForm extends javax.swing.JPanel {
         int selectedRowIndex = tb_book.getSelectedRow();
 
         if (selectedRowIndex == -1) {
-            NofiDialog nd = new NofiDialog("Vui lòng chọn sách để thực hiện");
+            NofiDialog nd = new NofiDialog("Vui lòng chọn sách để thực hiện.");
             return null;
         } else {
             String id = model.getValueAt(selectedRowIndex, 0).toString();

@@ -557,12 +557,12 @@ public class EditBookFrame extends javax.swing.JFrame {
             || publiser.equals("") || status.equals("") || year.equals("") 
                 || room.equals("") || shelf.equals("") || row.equals("") ) 
         {
-            NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin");
+            NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin.");
         } else {
            Location  location= new Location(room, shelf, Integer.parseInt(row));
            Book newBook = new Book(book.getId(), name, code, author, category, Short.valueOf(year), publiser, status, location);
            bookController.updateBook(newBook);
-           NofiDialog nd = new NofiDialog("Chỉnh sửa sách thành công");
+           NofiDialog nd = new NofiDialog("Chỉnh sửa sách thành công.");
         }
         this.bmf.Search();
         this.dispose();

@@ -373,7 +373,7 @@ public class UserManagerForm extends javax.swing.JPanel {
         int selectedRowIndex = tb_user.getSelectedRow();
         
         if(selectedRowIndex == -1){
-            NofiDialog nd = new NofiDialog("Vui lòng chọn người để chỉnh sửa");
+            NofiDialog nd = new NofiDialog("Vui lòng chọn người để chỉnh sửa.");
             return null;
         }
         else{

@@ -307,19 +307,19 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         Book book = BookController.getBookById(idBook);
         User user = AccountController.getUserById(iduser);
         if (user ==  null){
-            NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin người dùng");
+            NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin người dùng.");
         }
         else if (!user.getAccount().getRole().equals("user")) {
-            NofiDialog nd = new NofiDialog("Quản lí không thể mượn sách");
+            NofiDialog nd = new NofiDialog("Quản lí không thể mượn sách.");
         } 
         else {
             if (book == null) {
-                NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin sách");
+                NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin sách.");
             } else {
                 
                 if (!book.getStatus().equals("Khả dụng")){
                     String str =  book.getStatus();
-                    NofiDialog nd = new NofiDialog("Sách " + str);
+                    NofiDialog nd = new NofiDialog("Sách " + str+".");
                 }
                 else{
                 try {
@@ -329,7 +329,7 @@ public class BorrowTicketForm extends javax.swing.JPanel {
                     ticketController.addLendTicket("chưa xử lý", new Date(new Date().getTime() + 1209600000), currentid);
                     ctf.dispose();
                 } catch (Exception e) {
-                    NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin");
+                    NofiDialog nd = new NofiDialog("Vui lòng kiểm tra lại thông tin.");
                 }
                 }
             }

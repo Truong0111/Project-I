@@ -489,10 +489,10 @@ public class CreateUserFrame extends javax.swing.JFrame {
         }
         if (name.equals("") || password.equals("") || idCard.equals("") || mail.equals("")
                 || phone.equals("") || userName.equals("") || yearbd.equals("") || role.equals("")) {
-            NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin");
+            NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin.");
         }
         else if(role.equals("manager") && !user.getAccount().getRole().equals("admin")){
-            NofiDialog nd = new NofiDialog("Không đủ quyền hạn tạo người quản lý");
+            NofiDialog nd = new NofiDialog("Không đủ quyền hạn tạo người quản lý.");
         }
         else {
             if (accountController.checkErrorCreateAccount(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role).isEmpty() == false) {
@@ -506,10 +506,10 @@ public class CreateUserFrame extends javax.swing.JFrame {
                 if (accountController.addUser(name, Integer.parseInt(yearbd), phone, idCard, mail, userName, password, role)) {
                     FinanceController financeController= new FinanceController();
                     financeController.addFinance(50000, "thu", "tạo tài khoản " + phone);
-                    NofiDialog nd = new NofiDialog("Tạo tài khoản thành công");
+                    NofiDialog nd = new NofiDialog("Tạo tài khoản thành công.");
                     dispose();
                 } else {
-                    NofiDialog nd = new NofiDialog("Nhập thông tin không hợp lệ");
+                    NofiDialog nd = new NofiDialog("Nhập thông tin không hợp lệ.");
                 }
             }
         }

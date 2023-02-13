@@ -405,11 +405,11 @@ public class EditUserFrame extends javax.swing.JFrame {
         Account accountAfterUpdate = new Account(mail, userName, "password", account.getIdAccount(), account.getRole());
         User userAfterUpdate= new User(name, yearbd, phone, idCard, accountAfterUpdate);
         if (accountController.updateUser(this.user.getAccount().getIdAccount(), userAfterUpdate)){
-            NofiDialog nd = new NofiDialog("Chỉnh sửa thành công");
+            NofiDialog nd = new NofiDialog("Chỉnh sửa thành công.");
             dispose();
         }
         else{
-            NofiDialog nd = new NofiDialog("Chỉnh sửa không hợp lệ");
+            NofiDialog nd = new NofiDialog("Chỉnh sửa không hợp lệ.");
         }
         this.umf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed
