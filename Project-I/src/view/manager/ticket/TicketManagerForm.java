@@ -123,7 +123,7 @@ public class TicketManagerForm extends javax.swing.JPanel {
         });
 
         jcb_type.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jcb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phiếu mượn", "Phiếu gia hạn", "Phiếu trả", "Phiếu phạt", "Phiếu yêu cầu sách" }));
+        jcb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phiếu mượn", "Phiếu gia hạn", "Phiếu trả", "Phiếu phạt", "" }));
         jcb_type.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jcb_status.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -274,14 +274,16 @@ public class TicketManagerForm extends javax.swing.JPanel {
             String searchstatus = String.valueOf(jcb_status.getSelectedItem());
 
             String sql = "select * from ";
-
-            if(searchtype.equals("Phiếu mượn")) sql = sql + "borrowticket";
-            else if (searchtype.equals("Phiếu gia hạn")) sql = sql + "extendticket";
-            else if (searchtype.equals("Phiếu trả")) sql = sql + "lendticket";
-            else if (searchtype.equals("Phiếu phạt")) sql = sql + "penaltyticket";
-            else  sql = sql + "bookrequestticket";
-            sql = sql + " where idTicket like '%" + searchid + "%' and status like '%" + searchstatus +"%' order by dateCreate desc" ;
-
+            if(searchtype.equals("")){
+                
+            }
+            else {
+                if(searchtype.equals("Phiếu mượn")) sql = sql + "borrowticket";
+                else if (searchtype.equals("Phiếu gia hạn")) sql = sql + "extendticket";
+                else if (searchtype.equals("Phiếu trả")) sql = sql + "lendticket";
+                else if (searchtype.equals("Phiếu phạt")) sql = sql + "penaltyticket";
+                sql = sql + " where idTicket like '%" + searchid + "%' and status like '%" + searchstatus +"%' order by dateCreate desc" ;
+            }
             ResultSet rs = st.executeQuery(sql);
             ClearDataTable();
             setCountToZ();

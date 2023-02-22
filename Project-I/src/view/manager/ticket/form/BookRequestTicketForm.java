@@ -54,16 +54,16 @@ public class BookRequestTicketForm extends javax.swing.JPanel {
         myButton1 = new view.other.MyButton();
         myButton2 = new view.other.MyButton();
 
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel5.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel1.setText("Ngày tạo");
 
         tf_iduser.setEditable(false);
-        tf_iduser.setBackground(new java.awt.Color(245, 245, 245));
+        tf_iduser.setBackground(new java.awt.Color(250, 250, 250));
         tf_iduser.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_iduser.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
@@ -84,13 +84,13 @@ public class BookRequestTicketForm extends javax.swing.JPanel {
             .addComponent(tf_iduser, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel7.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Tên sách");
 
-        tf_idbook.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idbook.setBackground(new java.awt.Color(250, 250, 250));
         tf_idbook.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idbook.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
@@ -111,13 +111,13 @@ public class BookRequestTicketForm extends javax.swing.JPanel {
             .addComponent(tf_idbook, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel8.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("Tác giả");
 
-        tf_datecreate.setBackground(new java.awt.Color(245, 245, 245));
+        tf_datecreate.setBackground(new java.awt.Color(250, 250, 250));
         tf_datecreate.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_datecreate.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
@@ -138,14 +138,14 @@ public class BookRequestTicketForm extends javax.swing.JPanel {
             .addComponent(tf_datecreate, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setText("ID Phiếu");
 
         tf_idticket.setEditable(false);
-        tf_idticket.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idticket.setBackground(new java.awt.Color(250, 250, 250));
         tf_idticket.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idticket.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_idticket.setDisabledTextColor(new java.awt.Color(0, 0, 0));

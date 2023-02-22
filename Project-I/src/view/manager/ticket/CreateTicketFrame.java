@@ -71,10 +71,11 @@ public class CreateTicketFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel6.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel6.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel10.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Tạo phiếu mới");

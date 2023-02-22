@@ -62,17 +62,17 @@ public class ChangePassFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel7.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Xác nhận mật khẩu");
 
-        tf_cfpass.setBackground(new java.awt.Color(245, 245, 245));
+        tf_cfpass.setBackground(new java.awt.Color(250, 250, 250));
         tf_cfpass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_cfpass.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
@@ -106,14 +106,14 @@ public class ChangePassFrame extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setText("Tài khoản");
 
         tf_username.setEditable(false);
-        tf_username.setBackground(new java.awt.Color(245, 245, 245));
+        tf_username.setBackground(new java.awt.Color(250, 250, 250));
         tf_username.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -145,13 +145,13 @@ public class ChangePassFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel10.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel6.setText("Mật khẩu mới");
 
-        tf_newpass.setBackground(new java.awt.Color(245, 245, 245));
+        tf_newpass.setBackground(new java.awt.Color(250, 250, 250));
         tf_newpass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_newpass.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
@@ -226,8 +226,9 @@ public class ChangePassFrame extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        jPanel4.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Đổi mật khẩu");
@@ -256,8 +257,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

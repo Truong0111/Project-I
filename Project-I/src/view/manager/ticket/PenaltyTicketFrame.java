@@ -110,9 +110,9 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -133,16 +133,16 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel5.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel1.setText("Tên người mượn");
 
         tf_username.setEditable(false);
-        tf_username.setBackground(new java.awt.Color(245, 245, 245));
+        tf_username.setBackground(new java.awt.Color(250, 250, 250));
         tf_username.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_username.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_username.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -152,7 +152,7 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
         jLabel4.setText("ID");
 
         tf_iduser.setEditable(false);
-        tf_iduser.setBackground(new java.awt.Color(245, 245, 245));
+        tf_iduser.setBackground(new java.awt.Color(250, 250, 250));
         tf_iduser.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_iduser.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_iduser.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -183,14 +183,14 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel7.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Tên sách");
 
         tf_bookname.setEditable(false);
-        tf_bookname.setBackground(new java.awt.Color(245, 245, 245));
+        tf_bookname.setBackground(new java.awt.Color(250, 250, 250));
         tf_bookname.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_bookname.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_bookname.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -200,7 +200,7 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
         jLabel6.setText("ID");
 
         tf_idbook.setEditable(false);
-        tf_idbook.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idbook.setBackground(new java.awt.Color(250, 250, 250));
         tf_idbook.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idbook.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_idbook.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -231,10 +231,10 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel8.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
         tf_dateborrow.setEditable(false);
-        tf_dateborrow.setBackground(new java.awt.Color(245, 245, 245));
+        tf_dateborrow.setBackground(new java.awt.Color(250, 250, 250));
         tf_dateborrow.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_dateborrow.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_dateborrow.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -262,14 +262,14 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
             .addComponent(tf_dateborrow)
         );
 
-        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setText("ID Phiếu mượn");
 
         tf_idticket.setEditable(false);
-        tf_idticket.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idticket.setBackground(new java.awt.Color(250, 250, 250));
         tf_idticket.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idticket.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_idticket.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -295,14 +295,14 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel11.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel10.setText("Số ngày trả muộn");
 
         tf_dateLate.setEditable(false);
-        tf_dateLate.setBackground(new java.awt.Color(245, 245, 245));
+        tf_dateLate.setBackground(new java.awt.Color(250, 250, 250));
         tf_dateLate.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_dateLate.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_dateLate.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -312,7 +312,7 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
         jLabel12.setText("Tiền phạt");
 
         tf_penalty.setEditable(false);
-        tf_penalty.setBackground(new java.awt.Color(245, 245, 245));
+        tf_penalty.setBackground(new java.awt.Color(250, 250, 250));
         tf_penalty.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_penalty.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_penalty.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -322,15 +322,15 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tf_dateLate, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tf_penalty, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_penalty, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,7 +340,7 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel14.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
         myButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         myButton3.setText("Hoàn tất trả sách");
@@ -381,10 +381,10 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel15.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
         tf_datelend.setEditable(false);
-        tf_datelend.setBackground(new java.awt.Color(245, 245, 245));
+        tf_datelend.setBackground(new java.awt.Color(250, 250, 250));
         tf_datelend.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_datelend.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_datelend.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -398,7 +398,7 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
         jLabel7.setText("Ngày trả thực tế");
 
         tf_datelend1.setEditable(false);
-        tf_datelend1.setBackground(new java.awt.Color(245, 245, 245));
+        tf_datelend1.setBackground(new java.awt.Color(250, 250, 250));
         tf_datelend1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_datelend1.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_datelend1.setCaretColor(new java.awt.Color(51, 51, 51));
@@ -415,7 +415,7 @@ public class PenaltyTicketFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tf_datelend1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_datelend1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(

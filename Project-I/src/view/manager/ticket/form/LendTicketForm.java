@@ -51,16 +51,18 @@ public class LendTicketForm extends javax.swing.JPanel {
         myButton2 = new view.other.MyButton();
         myButton1 = new view.other.MyButton();
 
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(751, 202));
 
-        jPanel5.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel1.setText("ID phiếu mượn");
 
-        tf_idborrowticket.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idborrowticket.setBackground(new java.awt.Color(250, 250, 250));
         tf_idborrowticket.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idborrowticket.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 

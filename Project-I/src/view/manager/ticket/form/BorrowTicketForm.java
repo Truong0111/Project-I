@@ -145,14 +145,14 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         });
         bookmenu.add(book3);
 
-        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPanel3MousePressed(evt);
             }
         });
 
-        jPanel8.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPanel8MousePressed(evt);
@@ -163,7 +163,7 @@ public class BorrowTicketForm extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("ID Sách");
 
-        tf_idbook.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idbook.setBackground(new java.awt.Color(250, 250, 250));
         tf_idbook.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idbook.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_idbook.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -197,14 +197,14 @@ public class BorrowTicketForm extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPanel9MousePressed(evt);
             }
         });
 
-        tf_iduser.setBackground(new java.awt.Color(245, 245, 245));
+        tf_iduser.setBackground(new java.awt.Color(250, 250, 250));
         tf_iduser.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_iduser.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         tf_iduser.addFocusListener(new java.awt.event.FocusAdapter() {

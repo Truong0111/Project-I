@@ -102,9 +102,9 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -121,9 +121,9 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel5.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -134,13 +134,13 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
         jLabel4.setText("ID");
 
         tf_username.setEditable(false);
-        tf_username.setBackground(new java.awt.Color(245, 245, 245));
+        tf_username.setBackground(new java.awt.Color(250, 250, 250));
         tf_username.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_username.setBorder(compound);
         tf_username.setPreferredSize(new java.awt.Dimension(200, 28));
 
         tf_iduser.setEditable(false);
-        tf_iduser.setBackground(new java.awt.Color(245, 245, 245));
+        tf_iduser.setBackground(new java.awt.Color(250, 250, 250));
         tf_iduser.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_iduser.setBorder(compound);
 
@@ -170,14 +170,14 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel7.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Tên Sách");
 
         tf_bookname.setEditable(false);
-        tf_bookname.setBackground(new java.awt.Color(245, 245, 245));
+        tf_bookname.setBackground(new java.awt.Color(250, 250, 250));
         tf_bookname.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_bookname.setBorder(compound);
         tf_bookname.setPreferredSize(new java.awt.Dimension(275, 28));
@@ -187,7 +187,7 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
         jLabel6.setText("ID");
 
         tf_idbook.setEditable(false);
-        tf_idbook.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idbook.setBackground(new java.awt.Color(250, 250, 250));
         tf_idbook.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idbook.setBorder(compound);
 
@@ -217,14 +217,14 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel8.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("Ngày tạo");
 
         tf_datecreate.setEditable(false);
-        tf_datecreate.setBackground(new java.awt.Color(245, 245, 245));
+        tf_datecreate.setBackground(new java.awt.Color(250, 250, 250));
         tf_datecreate.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_datecreate.setBorder(compound);
 
@@ -247,14 +247,14 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel9.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setText("ID Phiếu");
 
         tf_idticket.setEditable(false);
-        tf_idticket.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idticket.setBackground(new java.awt.Color(250, 250, 250));
         tf_idticket.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idticket.setBorder(compound);
 
@@ -263,7 +263,7 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
         jLabel9.setText("ID phiếu mượn");
 
         tf_idborrow.setEditable(false);
-        tf_idborrow.setBackground(new java.awt.Color(245, 245, 245));
+        tf_idborrow.setBackground(new java.awt.Color(250, 250, 250));
         tf_idborrow.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_idborrow.setBorder(compound);
 
@@ -292,14 +292,14 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel11.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel7.setText("Ngày trả");
 
         tf_datelend.setEditable(false);
-        tf_datelend.setBackground(new java.awt.Color(245, 245, 245));
+        tf_datelend.setBackground(new java.awt.Color(250, 250, 250));
         tf_datelend.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_datelend.setBorder(compound);
 
@@ -322,7 +322,7 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel14.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -358,14 +358,14 @@ public class CheckExtendTicketFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel15.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel11.setText("Ngày mượn");
 
         tf_dateborrow.setEditable(false);
-        tf_dateborrow.setBackground(new java.awt.Color(245, 245, 245));
+        tf_dateborrow.setBackground(new java.awt.Color(250, 250, 250));
         tf_dateborrow.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tf_dateborrow.setBorder(compound);
 

@@ -52,7 +52,7 @@ public class ChooseTypeTicket extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lb_title.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lb_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

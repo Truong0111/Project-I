@@ -8,16 +8,12 @@ import view.manager.ticket.*;
 import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
 import controller.TicketController;
-import database.DBTicket;
-import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import model.book.Book;
 import model.ticket.BookRequestTicket;
@@ -56,9 +52,6 @@ public class CheckTicket extends javax.swing.JPanel {
         tb_ticket.getTableHeader().setOpaque(false);
         jPanel9.setVisible(false);
         
-        jcb_type.setOpaque(true);
-        jcb_type.setBorder(new EmptyBorder(0, 0,0,0));
-        jcb_type.setBackground(Color.WHITE);
         
     }
 
@@ -76,12 +69,8 @@ public class CheckTicket extends javax.swing.JPanel {
         jPanel11 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         tf_searchid = new javax.swing.JTextField();
         btn_search = new view.other.MyButton();
-        jcb_type = new javax.swing.JComboBox<>();
-        jcb_status = new javax.swing.JComboBox<>();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_ticket = new javax.swing.JTable();
@@ -105,12 +94,6 @@ public class CheckTicket extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel8.setText("Tìm theo ID phiếu");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel9.setText("Tìm theo loại phiếu");
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel10.setText("Tìm theo trạng thái");
-
         tf_searchid.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         btn_search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -123,14 +106,6 @@ public class CheckTicket extends javax.swing.JPanel {
             }
         });
 
-        jcb_type.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jcb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phiếu mượn", "Phiếu gia hạn", "Phiếu trả", "Phiếu phạt", "" }));
-        jcb_type.setBorder(null);
-        jcb_type.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jcb_status.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jcb_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Đã xử lý", "Chưa xử lý" }));
-
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -139,33 +114,20 @@ public class CheckTicket extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
-                    .addComponent(tf_searchid, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcb_type, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(55, 55, 55)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jcb_status, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel10))
-                .addContainerGap(156, Short.MAX_VALUE))
+                        .addComponent(tf_searchid, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104)
+                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(672, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9))
+                .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_searchid)
-                    .addComponent(jcb_type, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                    .addComponent(jcb_status)
+                    .addComponent(tf_searchid, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                     .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -178,14 +140,14 @@ public class CheckTicket extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID phiếu", "Loại", "Ngày tạo", "Trạng thái"
+                "ID phiếu", "Tên sách", "Loại", "Ngày tạo", "Trạng thái phiếu"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -216,9 +178,9 @@ public class CheckTicket extends javax.swing.JPanel {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lb_checknumber, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                .addComponent(lb_checknumber, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -265,29 +227,31 @@ public class CheckTicket extends javax.swing.JPanel {
         jPanel9.setVisible(true);
 
             String searchid = tf_searchid.getText().trim();
-            String searchtype = String.valueOf(jcb_type.getSelectedItem());
-            String searchstatus = String.valueOf(jcb_status.getSelectedItem());
-                                    
+            List<Ticket> tickets = TicketController.getTicketByUserId(user.getAccount().getIdAccount());                       
         
             ClearDataTable();
             setCountToZ();
             
-            List<Ticket> tickets= TicketController.getTicketByUserId(user.getAccount().getIdAccount());    
             for (Ticket ticket : tickets){
                 String idticket = String.valueOf(ticket.getId());
-                String type = "";
                 
+                String type = "";
+                String bookname ="";
                 if (ticket instanceof BorrowTicket){
                    type+="Phiếu mượn";
+                   bookname = ((BorrowTicket) ticket).getBook().getName();
                 }
-                if (ticket instanceof LendTicket){
+                else if (ticket instanceof LendTicket){
                    type+="Phiếu trả";
+                   bookname = ((LendTicket) ticket).getBorrowTicket().getBook().getName();
                 }
-                if (ticket instanceof ExtendTicket){
+                else if (ticket instanceof ExtendTicket){
                    type+="Phiếu gia hạn";
+                   bookname = ((ExtendTicket) ticket).getBorrowTicket().getBook().getName();
                 }
-                if (ticket instanceof PenaltyTicket){
+                else if (ticket instanceof PenaltyTicket){
                    type+="Phiếu phạt";
+                   bookname = ((PenaltyTicket) ticket).getBorrowTicket().getBook().getName();
                 }
                 
                 SimpleDateFormat  formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -295,7 +259,7 @@ public class CheckTicket extends javax.swing.JPanel {
                 
                 String status = ticket.getStatus();
 
-                String tbData[] = {idticket, type, strDate, status};
+                String tbData[] = {idticket,bookname, type, strDate, status};
 
                 DefaultTableModel tbmodel = (DefaultTableModel) tb_ticket.getModel();
                 tbmodel.addRow(tbData);
@@ -338,7 +302,7 @@ public class CheckTicket extends javax.swing.JPanel {
             return null;
         } else {
             String id = model.getValueAt(selectedRowIndex, 0).toString();
-            String type = model.getValueAt(selectedRowIndex, 1).toString();
+            String type = model.getValueAt(selectedRowIndex, 2).toString();
             if(type.equals("Phiếu mượn")){
                 BorrowTicket ticket = searchBorrowTicketByID(id);
                 return ticket;
@@ -590,15 +554,11 @@ public class CheckTicket extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.other.MyButton btn_search;
     private javax.swing.JMenuItem checkticket;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> jcb_status;
-    private javax.swing.JComboBox<String> jcb_type;
     private javax.swing.JLabel lb_checknumber;
     private javax.swing.JTable tb_ticket;
     private javax.swing.JTextField tf_searchid;

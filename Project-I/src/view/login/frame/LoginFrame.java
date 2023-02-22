@@ -80,6 +80,7 @@ public class LoginFrame extends javax.swing.JFrame {
         myButton1 = new view.other.MyButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -159,6 +160,16 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel4.add(jLabel7);
         jLabel7.setBounds(740, 0, 30, 30);
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/passeye.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel8MousePressed(evt);
+            }
+        });
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(570, 280, 30, 50);
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/loginbackground.jpg"))); // NOI18N
         jPanel4.add(jLabel4);
         jLabel4.setBounds(0, 0, 800, 530);
@@ -233,6 +244,13 @@ public class LoginFrame extends javax.swing.JFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MousePressed
+       if(tf_password.getEchoChar() != (char)0){
+            tf_password.setEchoChar((char)0);
+        }
+        else tf_password.setEchoChar((char)42);
+    }//GEN-LAST:event_jLabel8MousePressed
     
     public void checkAccount(){
         try {
@@ -310,6 +328,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
     private view.other.MyButton myButton1;
     private javax.swing.JPasswordField tf_password;
