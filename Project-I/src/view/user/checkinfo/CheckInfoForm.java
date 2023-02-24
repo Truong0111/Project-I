@@ -44,7 +44,8 @@ public class CheckInfoForm extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        tf_password = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        tf_password = new javax.swing.JPasswordField();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         tf_name = new javax.swing.JTextField();
@@ -75,6 +76,14 @@ public class CheckInfoForm extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel1.setText("Mật khẩu");
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/passeye.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel4MousePressed(evt);
+            }
+        });
+
         tf_password.setEditable(false);
         tf_password.setBackground(new java.awt.Color(245, 245, 245));
         tf_password.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -87,16 +96,19 @@ public class CheckInfoForm extends javax.swing.JPanel {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(335, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(335, 335, 335))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(299, 299, 299))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tf_password, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(tf_password)
         );
 
         jPanel7.setBackground(new java.awt.Color(245, 245, 245));
@@ -342,6 +354,13 @@ public class CheckInfoForm extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
+        if(tf_password.getEchoChar() != (char)0){
+            tf_password.setEchoChar((char)0);
+        }
+        else tf_password.setEchoChar((char)42);
+    }//GEN-LAST:event_jLabel4MousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -349,6 +368,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel11;
@@ -362,7 +382,7 @@ public class CheckInfoForm extends javax.swing.JPanel {
     private javax.swing.JTextField tf_idcard;
     private javax.swing.JTextField tf_mail;
     private javax.swing.JTextField tf_name;
-    private javax.swing.JTextField tf_password;
+    private javax.swing.JPasswordField tf_password;
     private javax.swing.JTextField tf_phone;
     private javax.swing.JTextField tf_username;
     private javax.swing.JTextField tf_yearbd;

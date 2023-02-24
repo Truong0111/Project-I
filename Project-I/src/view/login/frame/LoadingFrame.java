@@ -7,15 +7,18 @@ package view.login.frame;
 import static config.JDBCConnection.getJDBCConnection;
 import constand.MySQLConstand;
 import java.awt.Color;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.sql.Connection;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import model.user.User;
-import view.manager.ManagerFrame;
-import view.user.UserFrame;
+import view.other.NofiDialog;
 
 /**
  *
@@ -179,7 +182,6 @@ public class LoadingFrame extends javax.swing.JFrame {
                 long end = System.currentTimeMillis();
                 if(end - start > 5000){
                     ErrorConn();
-                    check = false;
                 }
             }
             
@@ -188,17 +190,12 @@ public class LoadingFrame extends javax.swing.JFrame {
             progress.setValue(60);
             Sleep(1000);
             
-            lb_des.setText("Kiểm tra dữ liệu người dùng");
-            // Kiem tra du lieu nguoi dung
-            Sleep(1000);
-            progress.setValue(90);
-            
             lb_des.setText("Hoàn thành kiểm tra!");
             progress.setValue(100);
             Sleep(1000);
             
             if(!check){
-                //thong bao loi~
+                NofiDialog nd = new NofiDialog("");
             }
             else{
                 LoginFrame lf = new LoginFrame();
@@ -219,7 +216,7 @@ public class LoadingFrame extends javax.swing.JFrame {
         public void ErrorConn(){
             lb_des.setText("Không thể kết nối với cơ sở dữ liệu, vui lòng thử lại");
             Sleep(3000);
-            dispose();
+            System.exit(-1);
         }
         
         public void Sleep(int time){
