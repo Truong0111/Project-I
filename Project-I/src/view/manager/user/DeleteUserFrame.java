@@ -84,7 +84,7 @@ public class DeleteUserFrame extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -496,7 +496,7 @@ public class DeleteUserFrame extends javax.swing.JFrame {
             dispose();
         }
         else{
-            NofiDialog nd = new NofiDialog("Chỉnh sửa không hợp lệ.");
+            NofiDialog nd = new NofiDialog("Xóa không hợp lệ");
         }
         this.umf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed

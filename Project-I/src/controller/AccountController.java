@@ -126,9 +126,10 @@ public class AccountController {
    
    public boolean deleteAccount(Account daccount,User duser, int id){
        try {
-            DBUser.deleteAccount(daccount,id);
-            DBUser.deleteUser(duser, id);
-            return true;
+           if(daccount.getRole().equals("manager") || daccount.getRole().equals("admin")) return false;
+           DBUser.deleteAccount(daccount,id);
+           DBUser.deleteUser(duser, id);
+           return true;
         } catch (Exception e) {
             return false;
         }
