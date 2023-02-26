@@ -114,6 +114,7 @@ public class ChangePassFrame extends javax.swing.JFrame {
 
         tf_username.setEditable(false);
         tf_username.setBackground(new java.awt.Color(250, 250, 250));
+        tf_username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_username.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
