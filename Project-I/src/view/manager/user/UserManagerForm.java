@@ -51,7 +51,6 @@ public class UserManagerForm extends javax.swing.JPanel {
         popmenu = new javax.swing.JPopupMenu();
         edit = new javax.swing.JMenuItem();
         changepass = new javax.swing.JMenuItem();
-        delete = new javax.swing.JMenuItem();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -66,7 +65,7 @@ public class UserManagerForm extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_user = new javax.swing.JTable();
 
-        popmenu.setPreferredSize(new java.awt.Dimension(160, 90));
+        popmenu.setPreferredSize(new java.awt.Dimension(160, 65));
 
         edit.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         edit.setText("Chỉnh sửa");
@@ -85,16 +84,6 @@ public class UserManagerForm extends javax.swing.JPanel {
             }
         });
         popmenu.add(changepass);
-
-        delete.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        delete.setText("Xóa người dùng");
-        delete.setPreferredSize(new java.awt.Dimension(117, 28));
-        delete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                deleteMousePressed(evt);
-            }
-        });
-        popmenu.add(delete);
 
         setBackground(new java.awt.Color(245, 245, 245));
         setPreferredSize(new java.awt.Dimension(1126, 743));
@@ -348,14 +337,6 @@ public class UserManagerForm extends javax.swing.JPanel {
             ChangePassFrame cpf = new ChangePassFrame(cpuser);
         }
     }//GEN-LAST:event_changepassMousePressed
-
-    private void deleteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMousePressed
-        User deleteuser = new User();
-        deleteuser = SelectUser(deleteuser);
-        if(deleteuser != null){
-            DeleteUserFrame duf = new DeleteUserFrame(deleteuser,this);
-        }
-    }//GEN-LAST:event_deleteMousePressed
     
     public void ClearDataTable(){
         DefaultTableModel tbmodel = (DefaultTableModel)tb_user.getModel();
@@ -472,7 +453,6 @@ public class UserManagerForm extends javax.swing.JPanel {
     private view.other.MyButton btn_createuser;
     private view.other.MyButton btn_search;
     private javax.swing.JMenuItem changepass;
-    private javax.swing.JMenuItem delete;
     private javax.swing.JMenuItem edit;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
