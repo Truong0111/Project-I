@@ -144,6 +144,68 @@ public class DBUser {
         }
     }
     
+        public static void deleteAccount(Account account,int id){
+            Connection connection = JDBCConnection.getJDBCConnection();
+            PreparedStatement pst = null;
+            
+            String sql = "delete from pj1.account where idUser = ?";
+            try{
+                pst = connection.prepareStatement(sql);
+                pst.setInt(1, id);
+                int rs = pst.executeUpdate();
+                System.out.println(rs);
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            } finally {
+                if (pst != null) {
+                    try {
+                        pst.close();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                if (connection != null) {
+                    try {
+                        connection.close();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }
+        
+        public static void deleteUser(User user, int id){
+            Connection connection = JDBCConnection.getJDBCConnection();
+            PreparedStatement pst = null;
+            
+            String sql = "delete from pj1.user where idUser = ?";
+            try{
+                pst = connection.prepareStatement(sql);
+                pst.setInt(1, id);
+                int rs = pst.executeUpdate();
+                System.out.println(rs);
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            } finally {
+                if (pst != null) {
+                    try {
+                        pst.close();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                if (connection != null) {
+                    try {
+                        connection.close();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }
+        
         public static List<User> getListUsers(){
         List<User> users = new ArrayList<>();
         Connection connection = JDBCConnection.getJDBCConnection();

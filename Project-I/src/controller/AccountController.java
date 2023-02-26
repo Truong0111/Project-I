@@ -124,6 +124,16 @@ public class AccountController {
        DBUser.addAccount(account);
    }
    
+   public boolean deleteAccount(Account daccount,User duser, int id){
+       try {
+            DBUser.deleteAccount(daccount,id);
+            DBUser.deleteUser(duser, id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+   }
+   
    //ham can chinh sua
    public boolean updateUser(int iduser,User user){
        String phoneNumber = user.getPhoneNumber();

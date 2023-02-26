@@ -33,6 +33,7 @@ public class ManagerFrame extends javax.swing.JFrame {
     
     public ManagerFrame(User user) {
         initComponents();
+        this.user = user;
         setLocationRelativeTo(null);
         lb_hello.setText("Xin chào, " + user.getName());
         ClockThread th= new ClockThread(lb_clock);
@@ -382,7 +383,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void btn_usermanagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usermanagerActionPerformed
         pn_main.removeAll();
-        UserManagerForm umf = new UserManagerForm();
+        UserManagerForm umf = new UserManagerForm(this.user);
         pn_main.add(umf);
         isSelect(btn_usermanager);
         pack();
