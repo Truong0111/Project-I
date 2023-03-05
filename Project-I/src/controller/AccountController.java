@@ -76,7 +76,7 @@ public class AccountController {
 
         // check number        
         if (phoneNumber.length() != 10 || !phoneNumber.substring(0,1).equals("0")){
-            listStringError.add("- Số điện thoại bao gồm 10 số.");
+            listStringError.add("- Số điện thoại không hợp lệ.");
         }
         
         // check idcard
