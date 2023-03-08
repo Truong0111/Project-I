@@ -252,7 +252,7 @@ public class CheckTicket extends javax.swing.JPanel {
 
                 if (ticket instanceof LendTicket) {
                     if (((LendTicket) ticket).getStatus().equals("chưa xử lý")) {
-                        type += "Chưa trả";
+                        type += "Phiếu trả";
                         bookname = ((LendTicket) ticket).getBorrowTicket().getBook().getName();
                         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                         String strDate = formatter.format(ticket.getDateCreate());
@@ -282,7 +282,7 @@ public class CheckTicket extends javax.swing.JPanel {
 
                     if (ticket instanceof LendTicket) {
                         if (((LendTicket) ticket).getStatus().equals("Đã xử lý")) {
-                            type += "phiếu trả";
+                            type += "Phiếu trả";
                             bookname = ((LendTicket) ticket).getBorrowTicket().getBook().getName();
                             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                             String strDate = formatter.format(ticket.getDateCreate());

@@ -125,9 +125,6 @@ public class TicketController {
         for (BorrowTicket BorrowTicket : DBTicket.getListBorrowTicket()){
             if (BorrowTicket.getBorrower().getAccount().getIdAccount() == id) tickets.add(BorrowTicket);
         }
-//        for (BookRequestTicket BookRequestTicket : DBTicket.getListBookRequestTicket()){
-//            if (BookRequestTicket.getId() == id) tickets.add(BookRequestTicket);
-//        }
         for (ExtendTicket ExtendTicket : DBTicket.getListExtendTicket()){
             if (ExtendTicket.getBorrowTicket().getBorrower().getAccount().getIdAccount() == id) tickets.add(ExtendTicket);
         }
@@ -233,6 +230,7 @@ public class TicketController {
         try {
            LendTicket lendTicket= getLendTicketByIdBorrow(borrowTicket.getId());
            lendTicket.setStatus("Đã xử lý");
+           lendTicket.setLendDate(new Date());
            DBTicket.updateLendTicket(lendTicket);
            DBBook.updateStatusBook(borrowTicket.getBook().getId(), "Khả dụng");
            return true;
