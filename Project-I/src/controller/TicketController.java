@@ -137,6 +137,15 @@ public class TicketController {
         return tickets;
     }
     
+    public static List<LendTicket> getLendTicketByUserId(int userId){
+        List<LendTicket> tickets = new ArrayList<>();
+     
+        for (LendTicket LendTicket : DBTicket.getListLendTicket()){
+            if (LendTicket.getBorrowTicket().getBorrower().getAccount().getIdAccount() == userId) tickets.add(LendTicket);
+        }
+        return tickets;
+    }
+    
     //add ticket
     public void addBorrowTicket(String status, int iduser, int idbook, Date borrowedDate){
         BorrowTicket BorrowTicket = new BorrowTicket();

@@ -36,7 +36,7 @@ public class CheckTicket extends javax.swing.JPanel {
      */
     private int count;
     private User user;
-    List<Ticket> tickets;
+    List<LendTicket> tickets;
     TicketController ticketController = new TicketController();
 
     public void setCountToZ() {
@@ -50,7 +50,7 @@ public class CheckTicket extends javax.swing.JPanel {
     public CheckTicket(User user) {
         initComponents();
         this.user = user;
-        this.tickets = TicketController.getTicketByUserId(user.getAccount().getIdAccount());
+        this.tickets = TicketController.getLendTicketByUserId(user.getAccount().getIdAccount());
         tb_ticket.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 16));
         tb_ticket.getTableHeader().setOpaque(false);
         jPanel9.setVisible(false);
