@@ -15,9 +15,10 @@ import view.other.NofiDialog;
  * @author Administrator
  */
 public class CreateBookFrame extends javax.swing.JFrame {
+
     private BookManagerForm bmf;
     private BookController bookController = new BookController();
-     
+
     /**
      * Creates new form CreateBookFrame
      */
@@ -26,6 +27,7 @@ public class CreateBookFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
     public CreateBookFrame(BookManagerForm bmf) {
         initComponents();
         setLocationRelativeTo(null);
@@ -581,25 +583,29 @@ public class CreateBookFrame extends javax.swing.JFrame {
         String room = tf_room.getText();
         String shelf = tf_shelf.getText();
         String row = tf_row.getText();
-        
-        if(khadungjRadioButton1.isSelected()){
-           status += "Khả dụng";
+
+        if (khadungjRadioButton1.isSelected()) {
+            status += "Khả dụng";
         }
-        if(kotontaijRadioButton2.isSelected()){
-           status += "Không tồn tại";
-           
-           
+        if (kotontaijRadioButton2.isSelected()) {
+            status += "Không tồn tại";
+
         }
         if (name.equals("") || author.equals("") || code.equals("") || category.equals("")
-            || publiser.equals("") || status.equals("") || year.equals("") 
-                || room.equals("") || shelf.equals("") || row.equals("") ) 
-        {
+                || publiser.equals("") || status.equals("") || year.equals("")
+                || room.equals("") || shelf.equals("") || row.equals("")) {
             NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin.");
         } else {
-           Location  location= new Location(room, shelf, Integer.parseInt(row));
-           bookController.addBook(name, code, author, category, Short.valueOf(year), publiser, status, location);
-           NofiDialog nd = new NofiDialog("Thêm sách mới thành công.");
-           dispose();
+            try {
+                Location location = new Location(room, shelf, Integer.parseInt(row));
+                bookController.addBook(name, code, author, category, Short.valueOf(year), publiser, status, location);
+                NofiDialog nd = new NofiDialog("Thêm sách mới thành công.");
+                this.bmf.Search();
+           this.dispose();
+            } catch (Exception e) {
+                NofiDialog nd = new NofiDialog("Thông tin hàng phải là số.");
+            }
+
         }
         this.bmf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed
