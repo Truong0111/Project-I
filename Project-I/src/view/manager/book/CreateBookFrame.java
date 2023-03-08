@@ -607,7 +607,6 @@ public class CreateBookFrame extends javax.swing.JFrame {
             }
 
         }
-        this.bmf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed
 
     private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed
