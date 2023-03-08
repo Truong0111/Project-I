@@ -628,11 +628,16 @@ public class EditBookFrame extends javax.swing.JFrame {
         {
             NofiDialog nd = new NofiDialog("Vui lòng điền đầy đủ thông tin.");
         } else {
-           Location  location= new Location(room, shelf, Integer.parseInt(row));
+            try {
+                Location  location= new Location(room, shelf, Integer.parseInt(row));
            Book newBook = new Book(book.getId(), name, code, author, category, Short.valueOf(year), publiser, status, location);
            bookController.updateBook(newBook);
            NofiDialog nd = new NofiDialog("Chỉnh sửa sách thành công.");
            this.dispose();
+            } catch (Exception e) {
+                 NofiDialog nd = new NofiDialog("Thông tin hàng phải là số.");
+            }
+           
         }
         this.bmf.Search();
     }//GEN-LAST:event_myButton1ActionPerformed
